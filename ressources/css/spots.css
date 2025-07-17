@@ -1,0 +1,727 @@
+/* WindPrana - Kite & Yoga Adventure - Kite Coaching Page Stylesheet
+   Palette 3 dynamique : Éléments naturels revitalisés
+   - Bleu Turquoise (#45B7A4) - eau et ciel
+   - Violet Améthyste (#8A65C9) - spiritualité et yoga
+   - Jaune Soleil (#FFB84D) - énergie et soleil
+   - Blanc (#FFFFFF) - espace et légèreté
+*/
+
+/* -------------------- RESET & BASE STYLES -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #45B7A4;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #8A65C9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #45B7A4;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #8A65C9;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* -------------------- BUTTONS -------------------- */
+.btn-primary {
+    display: inline-block;
+    background-color: #FFB84D;
+    color: #FFFFFF;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #E5A444;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #45B7A4;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #45B7A4;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #45B7A4;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #45B7A4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo a:hover {
+    color: #8A65C9;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #8A65C9;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8A65C9;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-mobile span {
+    width: 30px;
+    height: 3px;
+    background-color: #45B7A4;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/kite/hero-kite.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------- KITE INTRO SECTION -------------------- */
+.kite-intro .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.kite-intro-text {
+    flex: 1;
+}
+
+.kite-intro-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------- KITE COACHING STYLES SECTION -------------------- */
+.kite-styles {
+    background-color: #f9f9f9;
+}
+
+.kite-styles .container > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-style: italic;
+    color: #666;
+}
+
+.kite-styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.kite-style-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.kite-style-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.kite-style-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.freestyle-image {
+    background-image: url('../images/kite/freestyle.jpg');
+}
+
+.wave-image {
+    background-image: url('../images/kite/wave-riding.jpg');
+}
+
+.foil-image {
+    background-image: url('../images/kite/foiling.jpg');
+}
+
+.kite-style-card h3 {
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.kite-style-card p {
+    padding: 0 1rem 1rem 1rem;
+    color: #666;
+}
+
+/* -------------------- COACHING LEVELS SECTION -------------------- */
+.coaching-levels .container {
+    text-align: center;
+}
+
+.levels-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.level-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.level-icon {
+    font-size: 3rem;
+    color: #45B7A4;
+    margin-bottom: 1rem;
+}
+
+.level-beginner .level-icon {
+    color: #FFB84D;
+}
+
+.level-intermediate .level-icon {
+    color: #45B7A4;
+}
+
+.level-advanced .level-icon {
+    color: #8A65C9;
+}
+
+.level-card h3 {
+    margin-bottom: 1rem;
+}
+
+.level-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.level-card ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.level-card ul li:last-child {
+    border-bottom: none;
+}
+
+.level-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #45B7A4;
+    margin: 1rem 0;
+}
+
+/* -------------------- COACH PROFILE SECTION -------------------- */
+.coach-profile {
+    background-color: #f9f9f9;
+}
+
+.coach-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.coach-image {
+    flex: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.coach-bio {
+    flex: 2;
+}
+
+.coach-certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cert-badge {
+    background-color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #45B7A4;
+    border: 1px solid #45B7A4;
+}
+
+/* -------------------- EQUIPMENT SECTION -------------------- */
+.equipment .container > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.equipment-item {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-icon {
+    font-size: 2.5rem;
+    color: #FFB84D;
+    margin-bottom: 1rem;
+}
+
+/* -------------------- TESTIMONIALS SECTION -------------------- */
+.testimonials {
+    background-color: #45B7A4;
+    color: #FFFFFF;
+}
+
+.testimonials h2 {
+    color: #FFFFFF;
+}
+
+.testimonial-slider {
+    position: relative;
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial cite {
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* -------------------- BOOKING CTA SECTION -------------------- */
+.booking-cta {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.booking-cta h2 {
+    margin-bottom: 1rem;
+}
+
+.booking-cta p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+/* -------------------- FAQ SECTION -------------------- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1.5rem;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 0;
+}
+
+.faq-question h3 {
+    margin-bottom: 0;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: #45B7A4;
+}
+
+.faq-answer {
+    padding-top: 1rem;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+/* -------------------- NEWSLETTER SECTION -------------------- */
+.newsletter {
+    background-color: #8A65C9;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.newsletter h2 {
+    color: #FFFFFF;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    border-radius: 0 4px 4px 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background-color: #333;
+    color: #FFFFFF;
+    padding: 3rem 0;
+}
+
+.footer-logo a {
+    color: #FFFFFF;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-nav ul, .footer-social ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+.footer-nav ul li, .footer-social ul li {
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav ul li a, .footer-social ul li a {
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.footer-nav ul li a:hover, .footer-social ul li a:hover {
+    opacity: 1;
+}
+
+.footer-contact {
+    margin: 1.5rem 0;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.footer-copyright {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.footer-copyright a {
+    color: #FFFFFF;
+}
+
+/* -------------------- RESPONSIVE STYLES -------------------- */
+@media (max-width: 992px) {
+    .kite-intro .container,
+    .coach-container {
+        flex-direction: column;
+    }
+    
+    .coach-image {
+        margin: 0 auto 2rem auto;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .levels-wrapper {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .logo img {
+        height: 40px; /* plus petit sur tablette et mobile */
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: #FFFFFF;
+        padding: 5rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 1rem 0;
+    }
+    
+    .menu-mobile {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .menu-mobile.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-mobile.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-mobile.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        height: 35px; /* encore un peu plus petit sur très petits écrans */
+    }
+}
