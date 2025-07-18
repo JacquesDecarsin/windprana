@@ -467,35 +467,35 @@ nav ul li a:hover::after {
 }
 
 /* -------------------- NEWSLETTER SECTION -------------------- */
-.newsletter {
-    background-color: #8A65C9;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-.newsletter h2 {
-    color: #FFFFFF;
-}
-
-.newsletter-form {
+/* MailerLite form styling */
+.ml-embedded .ml-block-form {
     display: flex;
+    gap: 10px;
+    align-items: center;
     justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-.newsletter-form input {
+.ml-embedded input[type="email"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     flex: 1;
-    padding: 0.8rem 1rem;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 1rem;
+    min-width: 250px;
 }
 
-.newsletter-form button {
-    border-radius: 0 4px 4px 0;
+.ml-embedded button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.ml-embedded button:hover {
+    background-color: #0056b3;
 }
 
 /* -------------------- FOOTER -------------------- */
