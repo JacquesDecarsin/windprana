@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Book your kite and yoga adventure trips">
+        <link rel="stylesheet" href="ressources/css/booking.css">
+        <title>Booking - Kite & Yoga Coaching</title>
+        <!-- CSS links to be added later -->
+    </head>
+    <body>
+        <!-- Site Header -->
+        <header>
+            <!-- Logo and name -->
+            <div class="logo">
+                <a href="index.html"><img src="ressources/images/logo_sans_nom.png" alt="logo-sans-nom"/>WindPrana</a>
+            </div>
+            
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="kite.html">Kite</a></li>
+                    <li><a href="yoga.html">Yoga</a></li>
+                    <li><a href="spots.html">Spots</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <div class="menu-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- Hero section -->
+        <section class="hero booking-hero">
+            <div class="hero-content">
+                <h1>Book Your Adventure</h1>
+                <p>Reserve your spot in our upcoming kite and yoga trips</p>
+            </div>
+        </section>
+
+        <!-- Booking form section -->
+        <section class="booking-form">
+            <div class="container">
+                <h2>Reservation Form</h2>
+                <p>Fill in the form below to book your adventure. We'll contact you within 48 hours to confirm your reservation and provide payment details.</p>
+                
+                <form action="#" method="post" id="booking-form">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Trip Details -->
+                    <div class="form-section">
+                        <h3>Trip Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="trip-type">Select Adventure *</label>
+                            <select id="trip-type" name="trip-type" required>
+                                <option value="">-- Select a trip --</option>
+                                <option value="trip1">Trip Name 1</option>
+                                <option value="trip2">Trip Name 2</option>
+                                <option value="trip3">Trip Name 3</option>
+                                <option value="custom">Custom Adventure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duration">Duration (Days) *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="3">3 days</option>
+                                <option value="5">5 days</option>
+                                <option value="7">7 days</option>
+                                <option value="10">10 days</option>
+                                <option value="14">14 days</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="participants">Number of Participants *</label>
+                            <select id="participants" name="participants" required>
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6+">6+ people (group)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Level -->
+                    <div class="form-section">
+                        <h3>Experience Level</h3>
+                        
+                        <div class="form-group">
+                            <label>Kite Experience *</label>
+                            <div class="radio-group">
+                                <input type="radio" id="kite-beginner" name="kite-level" value="beginner" required>
+                                <label for="kite-beginner">Beginner (0-1 year)</label>
+                                
+                                <input type="radio" id="kite-intermediate" name="kite-level" value="intermediate">
+                                <label for="kite-intermediate">Intermediate (1-3 years)</label>
+                                
+                                <input type="radio" id="kite-advanced" name="kite-level" value="advanced">
+                                <label for="kite-advanced">Advanced (3+ years)</label>
+                                
+                                <input type="radio" id="kite-none" name="kite-level" value="none">
+                                <label for="kite-none">No experience</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Yoga Experience *</label>
+                            <div class="radio-group">
+                                <input type="radio" id="yoga-beginner" name="yoga-level" value="beginner" required>
+                                <label for="yoga-beginner">Beginner</label>
+                                
+                                <input type="radio" id="yoga-intermediate" name="yoga-level" value="intermediate">
+                                <label for="yoga-intermediate">Intermediate</label>
+                                
+                                <input type="radio" id="yoga-advanced" name="yoga-level" value="advanced">
+                                <label for="yoga-advanced">Advanced</label>
+                                
+                                <input type="radio" id="yoga-none" name="yoga-level" value="none">
+                                <label for="yoga-none">No experience</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Details -->
+                    <div class="form-section">
+                        <h3>Additional Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="equipment">Do you have your own kite equipment?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="equipment-yes" name="equipment" value="yes">
+                                <label for="equipment-yes">Yes</label>
+                                
+                                <input type="radio" id="equipment-no" name="equipment" value="no">
+                                <label for="equipment-no">No, I need to rent</label>
+                                
+                                <input type="radio" id="equipment-partial" name="equipment" value="partial">
+                                <label for="equipment-partial">Partial equipment</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dietary">Dietary Restrictions</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="vegetarian" name="dietary[]" value="vegetarian">
+                                <label for="vegetarian">Vegetarian</label>
+                                
+                                <input type="checkbox" id="vegan" name="dietary[]" value="vegan">
+                                <label for="vegan">Vegan</label>
+                                
+                                <input type="checkbox" id="gluten-free" name="dietary[]" value="gluten-free">
+                                <label for="gluten-free">Gluten-free</label>
+                                
+                                <input type="checkbox" id="dairy-free" name="dietary[]" value="dairy-free">
+                                <label for="dairy-free">Dairy-free</label>
+                                
+                                <input type="checkbox" id="other-dietary" name="dietary[]" value="other">
+                                <label for="other-dietary">Other</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests or Questions</label>
+                            <textarea id="special-requests" name="special-requests" rows="5"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hear-about">How did you hear about us?</label>
+                            <select id="hear-about" name="hear-about">
+                                <option value="">-- Select an option --</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="youtube">YouTube</option>
+                                <option value="friend">Friend Recommendation</option>
+                                <option value="search">Search Engine</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms and Privacy Policy -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> *</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">I have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> *</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">I would like to receive updates about future adventures</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <p class="required-fields">* Required fields</p>
+                        <button type="submit" class="btn-primary">Submit Booking Request</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Alternative booking methods -->
+        <section class="booking-alt">
+            <div class="container">
+                <h2>Other Ways to Book</h2>
+                <div class="booking-methods">
+                    <div class="booking-method">
+                        <h3>Book by Email</h3>
+                        <p>Send us your booking request directly to: <a href="mailto:your@email.com">your@email.com</a></p>
+                    </div>
+                    
+                    <div class="booking-method">
+                        <h3>Book by Phone</h3>
+                        <p>Call us at: <a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
+                        <p>Available Monday to Friday, 9am - 6pm (CET)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ section -->
+        <section class="booking-faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <h3>What is the deposit amount?</h3>
+                    <p>A 30% deposit is required to secure your booking. The remaining balance is due 30 days before the trip start date.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What's your cancellation policy?</h3>
+                    <p>Cancellations made 60+ days before the trip start date receive a full refund minus a €50 processing fee. Cancellations 30-60 days prior receive a 50% refund. Cancellations less than 30 days prior are non-refundable.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer insurance?</h3>
+                    <p>We recommend all participants obtain travel insurance that covers adventure sports. We can provide recommendations upon request.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What equipment do I need to bring?</h3>
+                    <p>A detailed packing list will be provided after booking. Kite equipment rental is available if needed.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I book a private trip?</h3>
+                    <p>Yes, we offer private customized trips. Please select "Custom Adventure" in the trip selection and provide details in the special requests field.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-logo">
+                    <a href="index.html">WindPrana</a>
+                </div>
+                    
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="trips.html">Trips</a></li>
+                        <li><a href="kite.html">Kite</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="spots.html">Spots</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                    
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+                    
+                <div class="footer-contact">
+                    <p class="contact-info">Email: <a href="mailto:windprana@gmail.com" class="contact-link">windprana@gmail.com</a></p>
+                    <p>What's app: +33769192769</p>
+                </div>
+                    
+                <div class="footer-copyright">
+                    <p>&copy; 2025 WindPrana. All rights reserved.</p>
+                    <p><a href="legal-notice.html">Legal Notice</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JS scripts to be added later -->
+    </body>
+</html>
