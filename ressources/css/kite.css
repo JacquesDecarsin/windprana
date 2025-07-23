@@ -168,9 +168,9 @@ p {
 
 /* ===== HERO BANNER ===== */
 .hero-banner {
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/kitesurfing-banner.jpg');
-  background-size: cover;
+  height: 80vh;
+  background: url('../images/composition-kite-hero1.png');
+  background-size:auto;
   background-position: center;
   color: var(--white);
   text-align: center;
