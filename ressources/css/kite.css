@@ -330,11 +330,12 @@ p {
 .video-container {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .discipline-video {
