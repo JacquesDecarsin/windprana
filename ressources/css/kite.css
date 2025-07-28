@@ -329,8 +329,7 @@ p {
 
 .video-container {
   border-radius: 10px;
-  overflow: hidden;
-  
+  overflow: hidden; 
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
