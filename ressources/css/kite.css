@@ -169,7 +169,7 @@ p {
 /* ===== HERO BANNER ===== */
 .hero-banner {
   height: 80vh;
-  background: url('../images/composition-kite-hero1.png');
+  background: url('../images/composition-kite-hero.png');
   background-size:auto;
   background-position: center;
   color: var(--white);
