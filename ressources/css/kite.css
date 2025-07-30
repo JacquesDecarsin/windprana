@@ -170,7 +170,7 @@ p {
 .hero-banner {
   height: 80vh;
   background: url('../images/composition-kite-hero.png');
-  background-size:auto;
+  background-size: cover;
   background-position: center;
   color: var(--white);
   text-align: center;
