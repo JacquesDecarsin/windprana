@@ -46,9 +46,9 @@ body {
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 300;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     letter-spacing: 4px;
     position: relative;
     z-index: 2;
@@ -57,14 +57,14 @@ body {
 .hero-title {
     font-size: 56px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     position: relative;
     z-index: 2;
 }
 
 .hero-subtitle {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
     opacity: 0.95;
     position: relative;
