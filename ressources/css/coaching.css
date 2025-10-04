@@ -1,4 +1,4 @@
-/* WindPrana - Kite & Yoga Adventure - Trips Page Stylesheet 
+/* WindPrana - Kite & Yoga Adventure - coaching Page Stylesheet 
    Palette: Éléments naturels revitalisés
    - Bleu Turquoise (#45B7A4) - eau et ciel
    - Violet Améthyste (#8A65C9) - spiritualité et yoga
@@ -204,7 +204,7 @@ nav ul li a:hover::after {
 }
 
 /* -------------------- HERO SECTION -------------------- */
-.hero-trips {
+.hero-coaching {
     height: 60vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/GP010130.JPG');
     background-size: cover;
@@ -405,20 +405,20 @@ table tbody tr:hover {
     background-color: #f9f9f9;
 }
 
-/* -------------------- TRIPS CTA SECTION -------------------- */
-.trips-cta {
+/* -------------------- coaching CTA SECTION -------------------- */
+.coaching-cta {
     background-color: #8A65C9;
     color: #FFFFFF;
     padding: 4rem 0;
     text-align: center;
 }
 
-.trips-cta h2 {
+.coaching-cta h2 {
     color: #FFFFFF;
     margin-bottom: 1rem;
 }
 
-.trips-cta p {
+.coaching-cta p {
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
@@ -430,12 +430,12 @@ table tbody tr:hover {
     flex-wrap: wrap;
 }
 
-.trips-cta .btn-secondary {
+.coaching-cta .btn-secondary {
     border-color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.trips-cta .btn-secondary:hover {
+.coaching-cta .btn-secondary:hover {
     background-color: #FFFFFF;
     color: #8A65C9;
 }
@@ -546,7 +546,7 @@ footer {
         font-size: 1.8rem;
     }
     
-    .hero-trips {
+    .hero-coaching {
         height: 50vh;
     }
     
@@ -619,7 +619,7 @@ footer {
         font-size: 1.8rem;
     }
     
-    .hero-trips {
+    .hero-coaching {
         height: 40vh;
     }
     

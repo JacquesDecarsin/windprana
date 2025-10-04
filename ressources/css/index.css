@@ -252,19 +252,19 @@ nav ul li a:hover::after {
     flex: 1;
 }
 
-/* -------------------- TRIPS SECTION -------------------- */
-.trips {
+/* -------------------- coaching SECTION -------------------- */
+.coaching {
     background-color: #f9f9f9;
 }
 
-.trips-grid {
+.coaching-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
-.trips-card {
+.coaching-card {
     background-color: #FFFFFF;
     border-radius: 10px;
     overflow: hidden;
@@ -272,19 +272,19 @@ nav ul li a:hover::after {
     transition: all 0.3s ease;
 }
 
-.trips-card:hover {
+.coaching-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.trips-image {
+.coaching-image {
     height: 200px;
     background-color: #45B7A4;
     background-size: cover;
     background-position: center;
 }
 
-.trips-image img {
+.coaching-image img {
     width: 100%; /* Étire l'image sur toute la largeur */
     height: 100%; /* Étire l'image sur toute la hauteur */
     object-fit: cover; /* Maintient les proportions tout en couvrant l'espace */
@@ -292,16 +292,16 @@ nav ul li a:hover::after {
     float: left; /* Aligne l'image à droite */
 }
 
-.trips-card h3 {
+.coaching-card h3 {
     padding: 1rem 1rem 0.5rem 1rem;
 }
 
-.trips-card p {
+.coaching-card p {
     padding: 0 1rem 1rem 1rem;
     color: #666;
 }
 
-.trips-link {
+.coaching-link {
     text-align: center;
 }
 
