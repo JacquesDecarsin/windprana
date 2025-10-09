@@ -305,8 +305,16 @@ main {
 .destination h1 {
     color: #FFFFFF;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 2rem;
+}
+
+.destination h2 {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .destination .btn {
