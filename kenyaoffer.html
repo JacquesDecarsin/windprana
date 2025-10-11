@@ -27,6 +27,275 @@
             overflow-x: hidden;
         }
 
+        /* HERO SECTION AMÉLIORÉ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 24px 100px;
+            overflow: hidden;
+        }
+
+        /* Background avec parallaxe */
+        /* Background vidéo */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Overlay gradient animé */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 210, 255, 0.15) 0%,
+                rgba(0, 0, 0, 0.7) 50%,
+                rgba(238, 90, 36, 0.15) 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Particules flottantes */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Contenu du hero */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+            transition: all 0.3s ease;
+        }
+
+        .location-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.4);
+            border-color: rgba(0, 210, 255, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #fff 0%, #00D2FF 50%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.4s backwards, shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 28px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .dates-box {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
+            padding: 14px 28px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 36px;
+            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.5);
+            animation: fadeInUp 1s ease-out 0.8s backwards, pulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .dates-box:hover {
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 16px 48px rgba(255, 107, 107, 0.6);
+        }
+
+        /* CTA Hero avec effet magnétique */
+        .hero-cta {
+            display: block;
+            background: #fff;
+            color: #000;
+            text-align: center;
+            padding: 22px 40px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 18px;
+            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 16px;
+            animation: fadeInUp 1s ease-out 1s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00D2FF, #667EEA);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .hero-cta:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 24px 64px rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .hero-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .urgency-text {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.95;
+            margin-top: 12px;
+            animation: fadeInUp 1s ease-out 1.2s backwards, blink 2s ease-in-out infinite;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.95; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
         /* CTA FLOTTANT */
         .floating-cta {
             position: fixed;
@@ -61,107 +330,53 @@
             font-weight: 800;
             font-size: 16px;
             box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
         }
 
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: url('ressources/images/selectionkenya/diani-vue-du-ciel.webp');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 24px 100px;
+        .floating-cta-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.5);
         }
 
-        .location-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 16px;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            opacity: 0.95;
-            margin-bottom: 24px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .dates-box {
-            display: inline-block;
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 32px;
-            box-shadow: 0 8px 24px rgba(255,107,107,0.4);
-        }
-
-        /* CTA Hero */
-        .hero-cta {
-            display: block;
-            background: #fff;
-            color: #000;
-            text-align: center;
-            padding: 20px 32px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 18px;
-            box-shadow: 0 12px 40px rgba(255,255,255,0.3);
-            transition: transform 0.2s;
-            margin-bottom: 16px;
-        }
-
-        .hero-cta:active {
-            transform: scale(0.98);
-        }
-
-        .urgency-text {
-            text-align: center;
-            font-size: 14px;
-            opacity: 0.9;
-            margin-top: 12px;
-        }
-
-        /* SECTION EXPERTISE */
+        /* SECTIONS SUIVANTES (aperçu) */
         .expertise-section {
             background: linear-gradient(180deg, #000 0%, #0A1628 100%);
-            padding: 56px 24px;
+            padding: 80px 24px;
+            position: relative;
         }
 
         .section-label {
             display: inline-block;
             background: rgba(0,210,255,0.15);
             color: #00D2FF;
-            padding: 6px 16px;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             text-transform: uppercase;
+            border: 1px solid rgba(0,210,255,0.3);
         }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+        }
+
 
         .section-title {
             font-size: 32px;
@@ -482,22 +697,45 @@
         </a>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO DYNAMIQUE -->
     <section class="hero">
-        <div class="location-badge">
-            📍 Diani Beach, Kenya
-        </div>
-        <h1>KASHKAZI<br>2026</h1>
-        <p class="hero-subtitle">Le stage kitesurf tous niveaux sur le spot parfait pour t'améliorer rapidement</p>
-        <div class="dates-box">
-            📅 31 JAN - 7 FEB 2026
+        <!-- Background avec parallaxe -->
+        <div class="hero-bg" id="heroBg">
+            <video autoplay muted loop playsinline>
+                <source src="ressources/images/selectionkenya/Timeline 1.mp4" type="video/mp4">
+            </video>
         </div>
         
-        <a href="mailto:info@windprana.com?subject=Réservation%20Kenya%20Kashkazi%202026&body=Bonjour,%0D%0A%0D%0AJe%20veux%20plus%20d'info%20pour%20le%20stage%20Kashkazi%20du%2031%20janvier%20au%207%20février%202026.%0D%0A%0D%0AMerci%20de%20me%20recontacter%20rapidement." class="hero-cta">
-            JE VEUX EN SAVOIR PLUS
-        </a>
+        <!-- Overlay gradient animé -->
+        <div class="hero-overlay"></div>
         
-        <p class="urgency-text">⚡ Plus que 2 chambres disponibles</p>
+        <!-- Particules flottantes -->
+        <div class="particles" id="particles"></div>
+        
+        <!-- Contenu -->
+        <div class="hero-content">
+            <div class="location-badge">
+                📍 Diani Beach, Kenya
+            </div>
+            <h1>KASHKAZI<br>2026</h1>
+            <p class="hero-subtitle">Le stage kitesurf tous niveaux sur le spot parfait pour t'améliorer rapidement</p>
+            <div class="dates-box">
+                📅 31 JAN - 7 FEB 2026
+            </div>
+            
+            <a href="mailto:info@windprana.com?subject=Réservation%20Kenya%20Kashkazi%202026&body=Bonjour,%0D%0A%0D%0AJe%20veux%20plus%20d'info%20pour%20le%20stage%20Kashkazi%20du%2031%20janvier%20au%207%20février%202026.%0D%0A%0D%0AMerci%20de%20me%20recontacter%20rapidement." class="hero-cta">
+                <span>JE VEUX EN SAVOIR PLUS</span>
+            </a>
+            
+            <p class="urgency-text">⚡ Plus que 2 chambres disponibles</p>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
     </section>
 
     <!-- EXPERTISE -->
@@ -713,6 +951,52 @@
     </footer>
 
     <script>
+        // Effet parallaxe sur le background
+        const heroBg = document.getElementById('heroBg');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            heroBg.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Génération des particules flottantes
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Cache le CTA flottant quand on arrive au footer
+        const floatingCta = document.querySelector('.floating-cta');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight * 0.9) {
+                floatingCta.classList.remove('hidden');
+            } else {
+                floatingCta.classList.add('hidden');
+            }
+        });
+
+        // Effet magnétique sur le CTA
+        const heroCta = document.querySelector('.hero-cta');
+        heroCta.addEventListener('mousemove', (e) => {
+            const rect = heroCta.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            heroCta.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+        });
+
+        heroCta.addEventListener('mouseleave', () => {
+            heroCta.style.transform = '';
+        });
+
         // Cache le CTA flottant quand on arrive au footer
         const floatingCta = document.querySelector('.floating-cta');
         const footer = document.querySelector('footer');
