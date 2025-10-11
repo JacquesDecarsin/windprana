@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGDBW4TEWY"></script>
@@ -31,6 +32,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kashkazi Kenya - Windprana</title>
     <style>
+            /* LANGUAGE TOGGLE SWITCH */
+    .language-toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 8px 15px;
+        border-radius: 50px;
+        box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
+        border: 1px solid rgba(0, 210, 255, 0.2);
+    }
+
+    .lang-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.3s ease;
+        letter-spacing: 0.5px;
+    }
+
+    .lang-label.active {
+        color: #00D2FF;
+    }
+
+    .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 26px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .toggle-switch.active {
+        background: linear-gradient(135deg, #00D2FF, #667EEA);
+        border-color: transparent;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .toggle-switch.active .toggle-slider {
+        transform: translateX(24px);
+    }
+
+    /* Version mobile */
+    @media (max-width: 600px) {
+        .language-toggle-container {
+            top: 10px;
+            right: 10px;
+            padding: 6px 12px;
+        }
+
+        .lang-label {
+            font-size: 12px;
+        }
+
+        .toggle-switch {
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle-slider {
+            width: 16px;
+            height: 16px;
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(20px);
+        }
+    }
         * {
             margin: 0;
             padding: 0;
@@ -43,96 +132,8 @@
             color: #fff;
             overflow-x: hidden;
         }
-        
-        /* LANGUAGE TOGGLE SWITCH */
-        .language-toggle-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 8px 15px;
-            border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
-            border: 1px solid rgba(0, 210, 255, 0.2);
-        }
 
-        .lang-label {
-            font-size: 14px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.5);
-            transition: color 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .lang-label.active {
-            color: #00D2FF;
-        }
-
-        .toggle-switch {
-            position: relative;
-            width: 50px;
-            height: 26px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .toggle-switch.active {
-            background: linear-gradient(135deg, #00D2FF, #667EEA);
-            border-color: transparent;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 18px;
-            height: 18px;
-            background: white;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .toggle-switch.active .toggle-slider {
-            transform: translateX(24px);
-        }
-
-        /* Version mobile */
-        @media (max-width: 600px) {
-            .language-toggle-container {
-                top: 10px;
-                right: 10px;
-                padding: 6px 12px;
-            }
-
-            .lang-label {
-                font-size: 12px;
-            }
-
-            .toggle-switch {
-                width: 44px;
-                height: 24px;
-            }
-
-            .toggle-slider {
-                width: 16px;
-                height: 16px;
-            }
-
-            .toggle-switch.active .toggle-slider {
-                transform: translateX(20px);
-            }
-        }
-        /* ENHANCED HERO SECTION */
+        /* HERO SECTION AMÉLIORÉ */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -143,7 +144,7 @@
             overflow: hidden;
         }
 
-        /* Background video */
+        /* Background vidéo */
         .hero-bg {
             position: absolute;
             top: 0;
@@ -166,7 +167,7 @@
             object-fit: cover;
         }
 
-        /* Animated overlay gradient */
+        /* Overlay gradient animé */
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -183,7 +184,7 @@
             50% { opacity: 0.6; }
         }
 
-        /* Floating particles */
+        /* Particules flottantes */
         .particles {
             position: absolute;
             top: 0;
@@ -220,7 +221,7 @@
             }
         }
 
-        /* Hero content */
+        /* Contenu du hero */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -314,7 +315,7 @@
             box-shadow: 0 16px 48px rgba(255, 107, 107, 0.6);
         }
 
-        /* Hero CTA with magnetic effect */
+        /* CTA Hero avec effet magnétique */
         .hero-cta {
             display: block;
             background: #fff;
@@ -397,7 +398,7 @@
             50% { transform: translateX(-50%) translateY(10px); }
         }
 
-        /* FLOATING CTA */
+        /* CTA FLOTTANT */
         .floating-cta {
             position: fixed;
             bottom: 0;
@@ -439,7 +440,7 @@
             box-shadow: 0 6px 20px rgba(255,255,255,0.5);
         }
 
-        /* FOLLOWING SECTIONS */
+        /* SECTIONS SUIVANTES */
         .expertise-section {
             background: linear-gradient(180deg, #000 0%, #0A1628 100%);
             padding: 80px 24px;
@@ -502,7 +503,7 @@
             line-height: 1.3;
         }
 
-        /* INLINE CTA */
+        /* CTA INLINE */
         .inline-cta {
             background: linear-gradient(135deg, #00D2FF, #667EEA);
             border-radius: 16px;
@@ -533,7 +534,7 @@
             transform: scale(0.98);
         }
 
-        /* WHY THIS SPOT */
+        /* POURQUOI CE SPOT */
         .why-section {
             background: #000;
             padding: 56px 24px;
@@ -564,7 +565,7 @@
             opacity: 0.85;
         }
 
-        /* PHOTO GALLERY */
+        /* GALERIE PHOTOS */
         .gallery-section {
             padding: 56px 24px;
             background: linear-gradient(180deg, #0A1628 0%, #000 100%);
@@ -602,7 +603,7 @@
             font-weight: 700;
         }
 
-        /* WIND CONDITIONS */
+        /* CONDITIONS WIND */
         .wind-section {
             background: linear-gradient(135deg, #00D2FF, #3A7BD5);
             padding: 56px 24px;
@@ -634,7 +635,7 @@
             opacity: 0.9;
         }
 
-        /* WHAT'S INCLUDED */
+        /* CE QUI EST INCLUS */
         .included-section {
             background: linear-gradient(180deg, #000 0%, #1A0A28 100%);
             padding: 56px 24px;
@@ -691,7 +692,7 @@
             margin-bottom: 24px;
         }
 
-        /* FINAL CTA */
+        /* CTA FINAL */
         .final-cta {
             background: linear-gradient(135deg, #FF6B6B, #EE5A24);
             padding: 56px 24px 120px;
@@ -772,11 +773,11 @@
         
         .floating-cta-btn + .floating-cta-btn {
             margin-top: 12px;
-        }
+}
         .floating-cta {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 12px; /* Ajoute un espace vertical entre les boutons */
             align-items: stretch;
         }   
         /* Responsive */
@@ -800,44 +801,47 @@
         </div>
         <span class="lang-label" id="label-en">EN</span>
     </div>
-    <!-- FLOATING CTA -->
+    <!-- CTA FLOTTANT -->
     <div class="floating-cta">
-        <a href="https://wa.me/33769192769?text=Hi!%20I%20want%20info%20about%20the%20Kashkazi%20Windprana%20camp" class="floating-cta-btn" target="_blank">
-            💬 CHAT WITH ME ON WHATSAPP
+        <a href="https://wa.me/33769192769?text=Salut%20!%20Je%20veux%20des%20infos%20sur%20le%20stage%20Kashkazi%20Windprana" class="floating-cta-btn" target="_blank">
+            💬 DISCUTE AVEC MOI SUR WHATSAPP
         </a>
+        <!-- <a href="mailto:info@windprana.com?subject=Réservation%20Kenya%20Kashkazi%202026&body=Bonjour,%0D%0A%0D%0AJe%20veux%20réserver%20ma%20place%20pour%20le%20stage%20Kashkazi.%0D%0A%0D%0AMerci%20de%20me%20recontacter%20rapidement." class="floating-cta-btn">
+            ⚡ JE RÉSERVE MA PLACE
+        </a> -->
     </div>
 
-    <!-- DYNAMIC HERO -->
+    <!-- HERO DYNAMIQUE -->
     <section class="hero">
-        <!-- Background video -->
+        <!-- Background vidéo -->
         <div class="hero-bg" id="heroBg">
             <video autoplay muted loop playsinline preload="auto">
                 <source src="ressources/video/Timeline1.mp4" type="video/mp4">
             </video>
         </div>
         
-        <!-- Animated overlay gradient -->
+        <!-- Overlay gradient animé -->
         <div class="hero-overlay"></div>
         
-        <!-- Floating particles -->
+        <!-- Particules flottantes -->
         <div class="particles" id="particles"></div>
         
-        <!-- Content -->
+        <!-- Contenu -->
         <div class="hero-content">
             <div class="location-badge">
                 📍 Diani Beach, Kenya
             </div>
             <h1>KASHKAZI<br>2026</h1>
-            <p class="hero-subtitle">Kitesurf camp for all levels - small group - on THE perfect spot</p>
+            <p class="hero-subtitle">Stage kitesurf pour tous niveaux - petit groupe - sur LE spot parfait</p>
             <div class="dates-box">
-                📅 JAN 31 - FEB 7, 2026
+                📅 31 JAN - 7 FEB 2026
             </div>
             
             <a href="#why-section" class="hero-cta">
-                <span>I WANT TO KNOW MORE</span>
+                <span>JE VEUX EN SAVOIR PLUS</span>
             </a>
             
-            <p class="urgency-text">⚡ Only 2 rooms left</p>
+            <p class="urgency-text">⚡ Plus que 2 chambres disponibles</p>
         </div>
 
         <!-- Scroll indicator -->
@@ -850,124 +854,124 @@
 
     <!-- EXPERTISE -->
     <section class="expertise-section">
-        <span class="section-label">🏆 Expert spot coach</span>
-        <h2 class="section-title">I spent 3 seasons in Diani</h2>
+        <span class="section-label">🏆 Coach expert du spot</span>
+        <h2 class="section-title">J'ai passé 3 saisons à Diani</h2>
         <p class="expert-text">
-            This is an <strong>optimized camp</strong> led by someone who knows the spot, conditions, tides, and waves. The program includes: <strong>coaching and video analysis</strong>, plus <strong>daily yoga</strong> and <strong>healthy meals with a private chef</strong>.
+            C'est un <strong>stage optimisé</strong> par quelqu'un qui connaît le spot, les conditions, les marées, les vagues. Au programme : <strong>coaching et analyse vidéo</strong>, mais aussi <strong>yoga quotidien</strong> et <strong>repas sains avec chef privé</strong>.
         </p>
         <p class="expert-text">
-            I know <strong>exactly where and when to take you</strong> so you progress quickly, safely, and I'm prepared for any situation.
+            Je sais <strong>exactement où et quand vous emmener</strong> pour que vous progressiez rapidement, en toute sécurité et je suis préparé à toutes éventualités.
         </p>
 
         <div class="expert-stats">
             <div class="stat-card">
                 <div class="stat-number">3</div>
-                <div class="stat-label">Full seasons</div>
+                <div class="stat-label">Saisons complètes</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">85%</div>
-                <div class="stat-label">Windy days</div>
+                <div class="stat-label">Jours ventés</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">12h</div>
-                <div class="stat-label">Personal coaching & video</div>
+                <div class="stat-label">Coaching perso et vidéo</div>
             </div>
         </div>
 
         <div class="inline-cta">
-            <p class="inline-cta-text">Ready to progress with an expert?</p>
+            <p class="inline-cta-text">Prêt à progresser avec un expert ?</p>
             <a href="#gallery-section" class="inline-cta-btn">
-                YES, I WANT TO PROGRESS
+                OUI, JE VEUX PROGRESSER
             </a>
         </div>
     </section>
 
-    <!-- WHY DIANI -->
+    <!-- POURQUOI DIANI -->
     <section id="why-section" class="why-section">
-        <span class="section-label">💎 The perfect spot</span>
-        <h2 class="section-title">Why Diani is ideal to boost your level</h2>
+        <span class="section-label">💎 Le spot parfait</span>
+        <h2 class="section-title">Pourquoi Diani est idéal pour exploser ton niveau</h2>
 
         <div class="reason-card">
             <div class="reason-icon">🌊</div>
-            <h3 class="reason-title">Crystal clear flat water</h3>
-            <p class="reason-text">The lagoon protected by the coral reef = perfect flat water (shallow for 70m and 4m deep offshore). The reef = to tackle waves and build stamina. You can work on your technique stress-free, try new tricks and simply PROGRESS.</p>
+            <h3 class="reason-title">Eau plate cristalline</h3>
+            <p class="reason-text">Le lagon protégé par la barrière de corail = eau plate parfaite (peu profond sur 70m et 4m de fond au large). Le reef = pour aller tâter les vagues et se faire les jambes. Tu peux travailler ta technique sans stress, tenter de nouveaux tricks et simplement PROGRESSER.</p>
         </div>
 
         <div class="reason-card">
             <div class="reason-icon">🌬️</div>
-            <h3 class="reason-title">Daily thermal wind</h3>
-            <p class="reason-text">I chose the <strong>best dates</strong> when the wind, called Kashkazi, <strong>blows 15-20 knots almost every day</strong>, perfect and steady side-shore. Dream conditions for riding.</p>
+            <h3 class="reason-title">Vent thermique quotidien</h3>
+            <p class="reason-text">J'ai choisi les <strong>meilleures dates</strong> où le vent, appelé Kashkazi, <strong>souffle 15-20 nœuds presque tous les jours</strong>, Side-shore parfait et régulier. Des conditions de rêve pour rider.</p>
         </div>
 
         <div class="reason-card">
             <div class="reason-icon">🏖️</div>
-            <h3 class="reason-title">17km of fine sand beach and coconut palms</h3>
-            <p class="reason-text">Zero crowds, unlimited space. You can ride and do downwinders with almost no one around, try your tricks without pressure. It's absolute kitesurfer's paradise.</p>
+            <h3 class="reason-title">17km de plage de sable fin et de côcotiers</h3>
+            <p class="reason-text">Zéro foule, espace illimité. Tu peux rider et faire des downwind avec quasi personne autour, tenter tes tricks sans pression. C'est le paradis absolu du kitesurfeur.</p>
         </div>
 
         <div class="reason-card">
             <div class="reason-icon">🎯</div>
-            <h3 class="reason-title">Maximum safety</h3>
-            <p class="reason-text">Shallow water, sandy bottom, 28°C. Perfect conditions to push your limits and land that trick you've been wanting to nail for months.</p>
+            <h3 class="reason-title">Sécurité maximale</h3>
+            <p class="reason-text">Eau peu profonde, fond sableux, 28°C. Les conditions parfaites pour oser sortir de ta zone de confort et tenter ce trick que tu veux valider depuis des mois.</p>
         </div>
 
         <div class="inline-cta">
-            <p class="inline-cta-text">Convinced? Only 2 spots left</p>
-            <a href="mailto:info@windprana.com?subject=I%20want%20my%20spot%20Kashkazi%202026&body=Hello,%0D%0A%0D%0AI%20absolutely%20want%20to%20join%20the%20Kashkazi%20camp.%0D%0A%0D%0AContact%20me%20soon!" class="inline-cta-btn">
-                I BOOK NOW
+            <p class="inline-cta-text">Convaincu ? Il reste 2 places seulement</p>
+            <a href="mailto:info@windprana.com?subject=Je%20veux%20ma%20place%20Kashkazi%202026&body=Bonjour,%0D%0A%0D%0AJe%20veux%20absolument%20participer%20au%20stage%20Kashkazi.%0D%0A%0D%0AContactez-moi%20vite%20!" class="inline-cta-btn">
+                JE RÉSERVE MAINTENANT
             </a>
         </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALERIE -->
     <section id="gallery-section" class="gallery-section">
-        <span class="section-label">📸 Preview</span>
-        <h2 class="section-title">Your Kashkazi experience</h2>
+        <span class="section-label">📸 Aperçu</span>
+        <h2 class="section-title">Ton expérience Kashkazi</h2>
 
         <div class="photo-grid">
             <div class="photo-card large">
-                <img src="ressources/images/selectionkenya/villa-vue-de-face.webp" alt="villa-front-view" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="photo-label">🏡 Private villa + pool</div>
+                <img src="ressources/images/selectionkenya/villa-vue-de-face.webp" alt="villa-vue-de-face" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="photo-label">🏡 Villa privée + piscine</div>
             </div>
             <div class="photo-card">
-                <img src="ressources/images/selectionkenya/cours2.webp" alt="personalized-coaching" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="photo-label">🏄 12h Coaching</div>
+                <img src="ressources/images/selectionkenya/cours2.webp" alt="cours-personnalise" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="photo-label">🏄 12h de Coaching</div>
             </div>
             <div class="photo-card">
-                <img src="ressources/images/selectionkenya/spot-diani-beach-vue-du-ciel.webp" alt="diani-beach-spot" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="photo-label">🌊 The spot</div>
+                <img src="ressources/images/selectionkenya/spot-diani-beach-vue-du-ciel.webp" alt="spot-diani-beach" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="photo-label">🌊  Le spot</div>
             </div>
             <div class="photo-card">
-                <img src="ressources/images/selectionkenya/yoga-on-the-beach.webp" alt="yoga-on-beach" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="photo-label">🧘 Daily yoga</div>
+                <img src="ressources/images/selectionkenya/yoga-on-the-beach.webp" alt="yoga-on-the-beach" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="photo-label">🧘 Yoga quotidien</div>
             </div>
             <div class="photo-card">
                 <img src="ressources/images/selectionkenya/private-chef.webp" alt="private-chef" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="photo-label">👨‍🍳 Private chef</div>
+                <div class="photo-label">👨‍🍳 Chef privé</div>
             </div>
         </div>
 
         <div class="inline-cta">
-            <p class="inline-cta-text">Tempting?</p>
-            <a href="mailto:info@windprana.com?subject=Info%20Kashkazi%20camp&body=Hello,%0D%0A%0D%0AI%20saw%20the%20photos,%20I%20want%20to%20know%20more!%0D%0A%0D%0AThanks" class="inline-cta-btn">
-                YES, GIVE ME THE DETAILS
+            <p class="inline-cta-text">Ça te fait envie ?</p>
+            <a href="mailto:info@windprana.com?subject=Infos%20stage%20Kashkazi&body=Bonjour,%0D%0A%0D%0AJ'ai%20vu%20les%20photos,%20je%20veux%20en%20savoir%20plus%20!%0D%0A%0D%0AMerci" class="inline-cta-btn">
+                OUI, DONNE-MOI LES DÉTAILS
             </a>
         </div>
     </section>
 
     <!-- WIND CONDITIONS -->
     <section class="wind-section">
-        <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 12px;">🌬️ KASHKAZI SEASON</h2>
-        <p style="opacity: 0.9; font-size: 18px;">Exceptional wind conditions</p>
+        <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 12px;">🌬️ KASHKAZI SAISON</h2>
+        <p style="opacity: 0.9; font-size: 18px;">Des conditions de vent exceptionnelles</p>
 
         <div class="wind-grid">
             <div class="wind-stat">
                 <div class="wind-value">15-25</div>
-                <div class="wind-label">Average knots</div>
+                <div class="wind-label">Nœuds moyens</div>
             </div>
             <div class="wind-stat">
                 <div class="wind-value">85%</div>
-                <div class="wind-label">Windy days</div>
+                <div class="wind-label">Jours ventés</div>
             </div>
             <div class="wind-stat">
                 <div class="wind-value">NE/E</div>
@@ -976,76 +980,76 @@
         </div>
 
         <p style="margin-top: 24px; font-size: 16px; opacity: 0.9;">
-            In 3 seasons, I've sailed in all possible conditions.<br>
-            <strong>I know when to get in the water, I know the tide's impact and where the reef breaks. I know the hotspots and I organize everything perfectly for you</strong>
+            En 3 saisons, j'ai navigué dans toutes les conditions possibles.<br>
+            <strong>Je sais quand se mettre à l'eau, je connais l'impact des marées et les endroits où les vagues du reef break. Je connais les hotspots et je t'organise tout ça aux petits oignons</strong>
         </p>
     </section>
 
-    <!-- WHAT'S INCLUDED -->
+    <!-- CE QUI EST INCLUS -->
     <section class="included-section">
-        <span class="section-label">📦 All-inclusive package</span>
-        <h2 class="section-title">Everything included, zero surprises</h2>
+        <span class="section-label">📦 Package all-inclusive</span>
+        <h2 class="section-title">Tout est inclus, zéro surprise</h2>
 
         <div class="package-grid">
             <div class="package-item">
-                <span class="package-name">🏄 12h semi-private kitesurf coaching</span>
-                <span class="package-desc">Max 2 people per session, radio communication, video analysis</span>
+                <span class="package-name">🏄 12h de coaching kitesurf semi-privé</span>
+                <span class="package-desc">Max 2 personnes par session, radio communication, analyse vidéo</span>
             </div>
             <div class="package-item">
-                <span class="package-name">🧘 6h yoga (Hatha & Ashtanga)</span>
-                <span class="package-desc">Muscle recovery and daily warm-up</span>
+                <span class="package-name">🧘 6h de yoga (Hatha & Ashtanga)</span>
+                <span class="package-desc">Récupération musculaire et échauffement quotidien</span>
             </div>
             <div class="package-item">
-                <span class="package-name">👨‍🍳 3 meals daily with <strong>private chef</strong></span>
-                <span class="package-desc">Healthy, local, and delicious cuisine</span>
+                <span class="package-name">👨‍🍳 3 repas par jour avec <strong>chef privé</strong></span>
+                <span class="package-desc">Cuisine saine, locale et délicieuse</span>
             </div>
             <div class="package-item">
-                <span class="package-name">🏡 Private room with bathroom</span>
-                <span class="package-desc">Villa with pool, beachfront, tropical garden</span>
+                <span class="package-name">🏡 Chambre privée avec salle de bain</span>
+                <span class="package-desc">Villa avec piscine, beachfront, jardin tropical</span>
             </div>
         </div>
 
         <div class="bonus-grid">
             <div class="bonus-item">
-                <strong>🎁 BONUS:</strong> Equipment provided for beginners (kite, board, harness)
+                <strong>🎁 BONUS :</strong> Matériel fourni niveau débutant (kite, board, harnais)
             </div>
             <div class="bonus-item">
-                <strong>🎁 BONUS:</strong> I'll give you contacts to get from the airport at the best price
+                <strong>🎁 BONUS :</strong> Je te file les contacts pour venir depuis l'aéroport au meilleur prix
             </div>
             <div class="bonus-item">
-                <strong>🎁 BONUS:</strong> Chill in one of the pools between sessions
+                <strong>🎁 BONUS :</strong> Chill dans l'une des piscines entre 2 sessions
             </div>
         </div>
 
         <div class="value-proposition">
-            <h3>All this for how much?</h3>
-            <div class="price-reveal">€1,490</div>
+            <h3>Tout ça pour combien ?</h3>
+            <div class="price-reveal">1 490€</div>
             <p class="price-details">
-                7 days all-inclusive • Private room<br>
-                (Shared room option: €1,190)
+                7 jours all-inclusive • Chambre privée<br>
+                (Option chambre partagée : 1 190€)
             </p>
-            <a href="mailto:info@windprana.com?subject=Kashkazi%20Booking%20€1490&body=Hello,%0D%0A%0D%0AI%20want%20to%20book%20for%20€1490.%0D%0A%0D%0AOption:%0D%0A☐%20Private%20room%20(€1490)%0D%0A☐%20Shared%20room%20(€1190)%0D%0A%0D%0AContact%20me%20soon." class="inline-cta-btn" style="margin-top: 8px;">
-                I BOOK MY SPOT
+            <a href="mailto:info@windprana.com?subject=Réservation%20Kashkazi%201490€&body=Bonjour,%0D%0A%0D%0AJe%20veux%20réserver%20pour%201490€.%0D%0A%0D%0AOption%20:%0D%0A☐%20Chambre%20privée%20(1490€)%0D%0A☐%20Chambre%20partagée%20(1190€)%0D%0A%0D%0AContactez-moi%20rapidement." class="inline-cta-btn" style="margin-top: 8px;">
+                JE RÉSERVE MA PLACE
             </a>
         </div>
     </section>
 
-    <!-- FINAL CTA -->
+    <!-- CTA FINAL -->
     <section class="final-cta">
-        <div class="spots-left">⚠️ Only 2 spots available</div>
-        <h2>Ready to live<br>your best kite trip?</h2>
+        <div class="spots-left">⚠️ Plus que 2 places disponibles</div>
+        <h2>Prêt à vivre<br>ton meilleur trip kite ?</h2>
         <p>
-            7 days that will change your kiting<br>
-            An expert coach • A paradise spot<br>
-            Guaranteed progression
+            7 jours qui vont changer ton kite<br>
+            Un coach expert • Un spot paradisiaque<br>
+            Une progression garantie
         </p>
         
-        <a href="mailto:info@windprana.com?subject=URGENT%20BOOKING%20Kashkazi%202026&body=Hello,%0D%0A%0D%0AI%20absolutely%20want%20to%20join%20the%20Kashkazi%20camp%20from%20January%2031%20to%20February%207,%202026.%0D%0A%0D%0AMy%20choice:%0D%0A☐%20Private%20room%20-%20€1490%0D%0A☐%20Shared%20room%20-%20€1190%0D%0A%0D%0AMy%20level:%0D%0A☐%20Beginner%0D%0A☐%20Intermediate%0D%0A☐%20Advanced%0D%0A%0D%0AContact%20me%20FAST%20before%20spots%20are%20gone!%0D%0A%0D%0ABest%20regards" class="final-cta-btn">
-            I BOOK NOW
+        <a href="mailto:info@windprana.com?subject=RÉSERVATION%20URGENTE%20Kashkazi%202026&body=Bonjour,%0D%0A%0D%0AJe%20veux%20ABSOLUMENT%20participer%20au%20stage%20Kashkazi%20du%2031%20janvier%20au%207%20février%202026.%0D%0A%0D%0AMon%20choix%20:%0D%0A☐%20Chambre%20privée%20-%201490€%0D%0A☐%20Chambre%20partagée%20-%201190€%0D%0A%0D%0AMon%20niveau%20:%0D%0A☐%20Débutant%0D%0A☐%20Intermédiaire%0D%0A☐%20Avancé%0D%0A%0D%0AContactez-moi%20VITE%20avant%20que%20les%20places%20partent%20!%0D%0A%0D%0ACordialement" class="final-cta-btn">
+            JE RÉSERVE MAINTENANT
         </a>
         
         <p style="margin-top: 24px; font-size: 14px; opacity: 0.8;">
-            ✅ Reply within 24h • Flexible deposit • Cancellation possible
+            ✅ Réponse sous 24h • Acompte flexible • Annulation possible
         </p>
     </section>
 
@@ -1061,64 +1065,63 @@
     </footer>
 
     <script>
-                // Language switcher
-// ⚠️ CHANGEZ CETTE VALEUR SELON LE FICHIER :
-// Dans kenyaoffer.html → 'en'
-// Dans kenyan-offer-french.html → 'fr'
-let currentLang = 'en'; 
+            // Language switcher
+    // ⚠️ CHANGEZ CETTE VALEUR SELON LE FICHIER :
+    // Dans kenyaoffer.html → 'en'
+    // Dans kenyan-offer-french.html → 'fr'
+    let currentLang = 'fr'; 
 
-function switchLanguage() {
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    
-    // Sauvegarde avec cookie
-    document.cookie = `language=${currentLang}; path=/; max-age=31536000`;
-    
-    // Redirection vers l'autre fichier
-    if (currentLang === 'en') {
-        window.location.href = 'kenyaoffer.html';
-    } else {
-        window.location.href = 'kenyan-offer-french.html';
-    }
-}
-
-// Initialisation au chargement de la page
-window.addEventListener('DOMContentLoaded'), function() {
-    const toggle = document.getElementById('toggle');
-    const labelFr = document.getElementById('label-fr');
-    const labelEn = document.getElementById('label-en');
-}
-    
-    // Affichage correct selon la langue actuelle
-    if (currentLang === 'en') {
-        toggle.classList.add('active');
-        labelFr.classList.remove('active');
-        labelEn.classList.add('active');
-    } else {
-        toggle.classList.remove('active');
-        labelFr.classList.add('active');
-        labelEn.classList.remove('active');
-    }
-    
-    // Vérification du cookie pour redirection automatique
-    const cookies = document.cookie.split(';');
-    let savedLang = null;
-    
-    for (let cookie of cookies) {
-        const [name, value] = cookie.trim().split('=');
-        if (name === 'language') {
-            savedLang = value;
-            break;
-        }
-    }
-
-    if (savedLang && savedLang !== currentLang) {
-        if (savedLang === 'en') {
+    function switchLanguage() {
+        currentLang = currentLang === 'fr' ? 'en' : 'fr';
+        
+        // Sauvegarde avec cookie
+        document.cookie = `language=${currentLang}; path=/; max-age=31536000`;
+        
+        // Redirection vers l'autre fichier
+        if (currentLang === 'en') {
             window.location.href = 'kenyaoffer.html';
         } else {
             window.location.href = 'kenyan-offer-french.html';
         }
     }
-        // Parallax effect on background
+
+    // Initialisation au chargement de la page
+    window.addEventListener('DOMContentLoaded'), function() {
+        const toggle = document.getElementById('toggle');
+        const labelFr = document.getElementById('label-fr');
+        const labelEn = document.getElementById('label-en');
+    }
+        // Affichage correct selon la langue actuelle
+        if (currentLang === 'en') {
+            toggle.classList.add('active');
+            labelFr.classList.remove('active');
+            labelEn.classList.add('active');
+        } else {
+            toggle.classList.remove('active');
+            labelFr.classList.add('active');
+            labelEn.classList.remove('active');
+        }
+        
+        // Vérification du cookie pour redirection automatique
+        const cookies = document.cookie.split(';');
+        let savedLang = null;
+        
+        for (let cookie of cookies) {
+            const [name, value] = cookie.trim().split('=');
+            if (name === 'language') {
+                savedLang = value;
+                break;
+            }
+        }
+
+        if (savedLang && savedLang !== currentLang) {
+            if (savedLang === 'en') {
+                window.location.href = 'kenyaoffer.html';
+            } else {
+                window.location.href = 'kenyan-offer-french.html';
+            }
+        }
+        // Effet parallaxe sur le background
         const heroBg = document.getElementById('heroBg');
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -1126,7 +1129,7 @@ window.addEventListener('DOMContentLoaded'), function() {
             heroBg.style.transform = `translateY(${rate}px)`;
         });
 
-        // Generate floating particles
+        // Génération des particules flottantes
         const particlesContainer = document.getElementById('particles');
         const particleCount = 30;
         
@@ -1139,7 +1142,7 @@ window.addEventListener('DOMContentLoaded'), function() {
             particlesContainer.appendChild(particle);
         }
 
-        // Hide floating CTA when reaching footer
+        // Cache le CTA flottant quand on arrive au footer
         const floatingCta = document.querySelector('.floating-cta');
         
         window.addEventListener('scroll', () => {
@@ -1150,7 +1153,7 @@ window.addEventListener('DOMContentLoaded'), function() {
             }
         });
 
-        // Magnetic effect on CTA
+        // Effet magnétique sur le CTA
         const heroCta = document.querySelector('.hero-cta');
         heroCta.addEventListener('mousemove', (e) => {
             const rect = heroCta.getBoundingClientRect();
@@ -1164,7 +1167,7 @@ window.addEventListener('DOMContentLoaded'), function() {
             heroCta.style.transform = '';
         });
 
-        // Hide floating CTA when footer is visible
+        // Cache le CTA flottant quand on arrive au footer
         const footer = document.querySelector('footer');
         
         const observer = new IntersectionObserver((entries) => {
