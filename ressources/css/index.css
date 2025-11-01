@@ -206,7 +206,7 @@ nav ul li a:hover::after {
 /* -------------------- HERO SECTION -------------------- */
 .hero {
     height: 100vh;
-    background-image: url('../images/captown.jpg');
+    background-image: url('../images/captown.webp');
     background-size: cover;
     background-position: top center;
     display: flex;
