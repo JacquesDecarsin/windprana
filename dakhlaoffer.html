@@ -1,209 +1,1030 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGDBW4TEWY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LGDBW4TEWY');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '690119006868135');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=690119006868135&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windprana Morrocco - Saharan Dream</title>
-    <link rel="stylesheet" href="ressources/css/dakhlaoffer.css">
+    <title>Windprana Morocco - Saharan Dream</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ENHANCED HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 24px 100px;
+            overflow: hidden;
+        }
+
+        /* Background video */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Animated overlay gradient */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212,165,116,0.8) 0%, rgba(139,105,20,0.6) 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Hero content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+            transition: all 0.3s ease;
+        }
+
+        .location-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(212, 165, 116, 0.4);
+            border-color: rgba(212, 165, 116, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #fff 0%, #D4A574 50%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.4s backwards, shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 28px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .dates-box {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
+            padding: 14px 28px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 36px;
+            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.5);
+            animation: fadeInUp 1s ease-out 0.8s backwards, pulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .dates-box:hover {
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 16px 48px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Hero CTA with magnetic effect */
+        .hero-cta {
+            display: block;
+            background: #fff;
+            color: #000;
+            text-align: center;
+            padding: 22px 40px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 18px;
+            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 16px;
+            animation: fadeInUp 1s ease-out 1s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .hero-cta:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 24px 64px rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .hero-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .urgency-text {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.95;
+            margin-top: 12px;
+            animation: fadeInUp 1s ease-out 1.2s backwards, blink 2s ease-in-out infinite;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.95; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* FLOATING CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            padding: 16px 24px;
+            z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            transform: translateY(100%);
+            animation: slideUp 0.5s ease-out 1s forwards;
+            transition: transform 0.3s ease-out;
+        }
+
+        .floating-cta.hidden {
+            transform: translateY(100%) !important;
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+
+        .floating-cta-btn {
+            display: block;
+            background: #fff;
+            color: #8B6914;
+            text-align: center;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.5);
+        }
+
+        /* FOLLOWING SECTIONS */
+        .expertise-section {
+            background: linear-gradient(180deg, #000 0%, #1A0F0A 100%);
+            padding: 80px 24px;
+            position: relative;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(212,165,116,0.15);
+            color: #D4A574;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border: 1px solid rgba(212,165,116,0.3);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .expert-text {
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .expert-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: #D4A574;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.7;
+            line-height: 1.3;
+        }
+
+        /* INLINE CTA */
+        .inline-cta {
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .inline-cta-text {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .inline-cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .inline-cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* WHY THIS SPOT */
+        .why-section {
+            background: #000;
+            padding: 56px 24px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, rgba(212,165,116,0.1), rgba(139,105,20,0.1));
+            border: 1px solid rgba(212,165,116,0.2);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .reason-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .reason-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .reason-text {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        /* PHOTO GALLERY */
+        .gallery-section {
+            padding: 56px 24px;
+            background: linear-gradient(180deg, #1A0F0A 0%, #000 100%);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .photo-card {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .photo-card.large {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/9;
+        }
+
+        /* WIND CONDITIONS */
+        .wind-section {
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            padding: 56px 24px;
+            text-align: center;
+        }
+
+        .wind-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .wind-stat {
+            text-align: center;
+        }
+
+        .wind-value {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .wind-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* WHAT'S INCLUDED */
+        .included-section {
+            background: linear-gradient(180deg, #000 0%, #1A0A28 100%);
+            padding: 56px 24px;
+        }
+
+        .package-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .package-item {
+            background: rgba(255,255,255,0.08);
+            border-left: 4px solid #D4A574;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .package-name {
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .package-desc {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .value-proposition {
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .value-proposition h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .price-reveal {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 16px 0;
+        }
+
+        .price-details {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #D4A574, #8B6914);
+            padding: 56px 24px 120px;
+            text-align: center;
+        }
+
+        .spots-left {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .final-cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #8B6914;
+            padding: 22px 48px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 18px;
+            box-shadow: 0 12px 40px rgba(255,255,255,0.3);
+            transition: transform 0.2s;
+        }
+
+        .final-cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: #D4A574;
+            text-decoration: none;
+        }
+
+        /* BONUS SECTION */
+        .bonus-grid {
+            display: grid;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .bonus-item {
+            background: rgba(255,215,0,0.1);
+            border-left: 4px solid #FFD700;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .bonus-item strong {
+            color: #FFD700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="newsletter-container">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="logo">WINDPRANA</div>
-            <h1 class="hero-title">Saharan Dream</h1>
-            <p class="hero-subtitle">Dakhla Evasion - Morrocco</p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLLC8HMH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- FLOATING CTA -->
+    <div class="floating-cta">
+        <a href="mailto:info@windprana.com?subject=Booking%20Inquiries%20-%20Details&body=Hello,%0D%0A%0D%0AI'm%20interested%20in%20the%20Dakhla%20coaching%20from%2014-21%20April%202026.%0D%0A%0D%0AI%20would%20like%20to%20receive%20more%20information." class="floating-cta-btn">
+            📧 BOOK NOW
+        </a>
+    </div>
+
+    <!-- DYNAMIC HERO -->
+    <section class="hero">
+        <!-- Background video -->
+        <div class="hero-bg" id="heroBg">
+            <video autoplay muted loop playsinline preload="auto">
+                <source src="ressources/video/dakhla video website-2-2-2.mp4" type="video/mp4">
+            </video>
         </div>
         
-        <!-- Dates -->
-        <div class="dates-banner">
-            📅 14 - 21 April 2026 (available)<br>
-            21 April - 28 April 2026 (fully booked)
-        </div>
+        <!-- Animated overlay gradient -->
+        <div class="hero-overlay"></div>
         
-        <!-- Photo Gallery -->
-        <div class="photo-gallery">
-            <div class="photo-placeholder photo-spot">
+        <!-- Floating particles -->
+        <div class="particles" id="particles"></div>
+        
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="location-badge">
+                📍 Shaharan Dream, Morocco
+            </div>
+            <h1>Dakhla<br>Morocco</h1>
+            <p class="hero-subtitle">Dakhla Evasion - Advanced kitesurf coaching in the desert lagoon</p>
+            <div class="dates-box">
+                📅 <strong>14 - 21 APRIL 2026 (Available)</strong><br>
+                21 - 28 APRIL 2026 (Fully Booked)
+            </div>
+            
+            <a href="#why-section" class="hero-cta">
+                <span>I WANT TO KNOW MORE</span>
+            </a>
+            
+            <p class="urgency-text">⚡ Limited spots available</p>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="expertise-section">
+        <span class="section-label">🏄‍♂️ Expert coaching</span>
+        <h2 class="section-title">Coaching tailored to your need</h2>
+        <p class="expert-text">
+            This is an <strong>advanced coaching camp</strong> with personalized attention in French or English. The program includes <strong>video analysis</strong>, <strong>live radio communication</strong>, and <strong>dedicated exercises</strong> tailored to your level.
+        </p>
+        <p class="expert-text">
+            Whether you're perfecting your <strong>BigAir, Strapless, or Foil</strong> techniques, I'll provide the expert guidance you need to reach the next level.
+        </p>
+
+        <div class="expert-stats">
+            <div class="stat-card">
+                <div class="stat-number">From 4 to 10 hours package</div>
+                <div class="stat-label">Video - Radio Coaching</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">90%</div>
+                <div class="stat-label">Windy Days</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Learn from others</div>
+                <div class="stat-label">Group video debrief</div>
+            </div>
+        </div>
+
+        <div class="inline-cta">
+            <p class="inline-cta-text">Ready to level up your riding?</p>
+            <a href="#gallery-section" class="inline-cta-btn">
+                YES, I WANT TO PROGRESS
+            </a>
+        </div>
+    </section>
+
+    <!-- WHY DAKHLA -->
+    <section id="why-section" class="why-section">
+        <span class="section-label">💎 The perfect spot</span>
+        <h2 class="section-title">Why Dakhla is a kiter's paradise</h2>
+
+        <div class="reason-card">
+            <div class="reason-icon">🌊</div>
+            <h3 class="reason-title">Perfect Flat Lagoon</h3>
+            <p class="reason-text">The legendary Speed Spot offers crystal clear flat water protected by natural barriers. Ideal conditions for freestyle, big air, and progression without obstacles.</p>
+        </div>
+
+        <div class="reason-card">
+            <div class="reason-icon">🌬️</div>
+            <h3 class="reason-title">Consistent Strong Wind</h3>
+            <p class="reason-text">April brings <strong>17-28 knots of steady wind</strong>, with 90% windy days. The offshore NE/N wind creates perfect conditions for all disciplines.</p>
+        </div>
+
+        <div class="reason-card">
+            <div class="reason-icon">🏜️</div>
+            <h3 class="reason-title">Saharan Desert Meets Ocean</h3>
+            <p class="reason-text">Experience the unique landscape where golden sand dunes meet turquoise waters. A place exclusively for kiters, with minimal crowds and maximum freedom.</p>
+        </div>
+
+        <div class="reason-card">
+            <div class="reason-icon">🎯</div>
+            <h3 class="reason-title">Professional Setup</h3>
+            <p class="reason-text">Access to the best spots, boat rescue service included, and all the infrastructure you need to focus on your progression.</p>
+        </div>
+
+        <div class="inline-cta">
+            <p class="inline-cta-text">Convinced? Limited spots available</p>
+            <a href="mailto:info@windprana.com?subject=I%20want%20my%20spot%20Dakhla%202026&body=Hello,%0D%0A%0D%0AI%20absolutely%20want%20to%20join%20the%20Dakhla%20camp.%0D%0A%0D%0AContact%20me%20soon!" class="inline-cta-btn">
+                I BOOK NOW
+            </a>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery-section" class="gallery-section">
+        <span class="section-label">📸 Preview</span>
+        <h2 class="section-title">Your Dakhla Experience</h2>
+
+        <div class="photo-grid">
+            <div class="photo-card large">
                 Speed spot, Dakhla<br>Perfect Flat
             </div>
-            <div class="photo-placeholder photo-beach">
-                Wind and Dunes<br>A place only for kiters
-            </div>
-            <div class="photo-placeholder photo-villa">
-                Lagune view<br> outstanding hotel
-            </div>
-            <div class="photo-placeholder photo-kite">
+            <div class="photo-card">
                 KITESURF<br>Lessons all level welcome<br>🇫🇷Fr 🇬🇧Eng
             </div>
-            <div class="photo-placeholder photo-yoga">
+            <div class="photo-card">
+                Wind and Dunes<br>A place only for kiters
+            </div>
+            <div class="photo-card">
                 YOGA<br>Sharpen body & mind
             </div>
-            <div class="photo-placeholder photo-coaching">
+            <div class="photo-card">
                 COACHING<br>BigAir, Strapless, Foil
             </div>
-            <div class="photo-placeholder photo-chef">
+            <div class="photo-card">
+                Lagune view<br>Outstanding hotel
+            </div>
+            <div class="photo-card">
                 Full pension<br>Healthy & delicious meals
             </div>
         </div>
-        
-        <!-- Content -->
-        <div class="content-section">
-            <!-- Kitesurf Details -->
-            <div class="detail-section">
-                <div class="section-header">
-                    <span class="section-icon">🏄‍♂️</span>
-                    <h2 class="section-title">KITESURF COACHING</h2>
-                    <p class="section-subtitle">9 hours of coaching<br>in French or English</p>
-                </div>
-                
-                <div class="detail-grid">
-                    <div class="detail-card">
-                        <div class="detail-icon">👥</div>
-                        <div class="detail-title">Video coaching</div>
-                        <div class="detail-text">Live demo<br>Radio communication</div>
-                    </div>
-                    
-                    <div class="detail-card">
-                        <div class="detail-icon">🎯</div>
-                        <div class="detail-title">Targeted training</div>
-                        <div class="detail-text">Dedicated exercices<br>Personalized to your level</div>
-                    </div>
-                    
-                    <div class="detail-card">
-                        <div class="detail-icon">📈</div>
-                        <div class="detail-title">Coaching Level</div>
-                        <div class="detail-text">Advanced sessions<br>Gear rental not provided</div>
-                    </div>
-                </div>
-                
-                <!-- Video Coaching Section -->
-                <div class="video-coaching">
-                    <div class="video-icon">🎥</div>
-                    <div class="video-content">
-                        <h3 class="video-title">VIDEO COACHING DEBRIEFING</h3>
-                        <p class="video-text">Feedback sessions with video analysis of your progression in the evening</p>
-                    </div>
-                </div>
+
+        <div class="inline-cta">
+            <p class="inline-cta-text">Tempting?</p>
+            <a href="mailto:info@windprana.com?subject=Info%20Dakhla%20camp&body=Hello,%0D%0A%0D%0AI%20saw%20the%20photos,%20I%20want%20to%20know%20more!%0D%0A%0D%0AThanks" class="inline-cta-btn">
+                YES, GIVE ME THE DETAILS
+            </a>
+        </div>
+    </section>
+
+    <!-- WIND CONDITIONS -->
+    <section class="wind-section">
+        <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 12px;">🌬️ DAKHLA WIND CONDITIONS</h2>
+        <p style="opacity: 0.9; font-size: 18px;">Exceptional wind conditions</p>
+
+        <div class="wind-grid">
+            <div class="wind-stat">
+                <div class="wind-value">17-28</div>
+                <div class="wind-label">Knots Average</div>
             </div>
-            
-            <!-- Yoga Details -->
-            <div class="detail-section">
-                <div class="section-header">
-                    <span class="section-icon">🧘‍♀️</span>
-                    <h2 class="section-title">YOGA SESSIONS</h2>
-                    <p class="section-subtitle">1 class a day • Recovery & warm-up</p>
-                </div>
-                
-                <div class="detail-grid yoga-grid-compact">
-                    <div class="detail-card hatha-card">
-                        <div class="detail-icon">🧘</div>
-                        <div class="detail-title">Hatha Yoga</div>
-                        <div class="detail-text">Gentle poses & breath</div>
-                    </div>
-                    
-                    <div class="detail-card ashtanga-card">
-                        <div class="detail-icon">💪</div>
-                        <div class="detail-title">Ashtanga Yoga</div>
-                        <div class="detail-text">Dynamic sequences</div>
-                    </div>
-                </div>
+            <div class="wind-stat">
+                <div class="wind-value">90%</div>
+                <div class="wind-label">Windy Days</div>
             </div>
-            
-            <!-- Wind Stats -->
-            <div class="wind-stats">
-                <div class="wind-title">🌬️ DAKHLA WIND CONDITIONS</div>
-                <div class="wind-grid">
-                    <div class="wind-item">
-                        <div class="wind-value">17-28</div>
-                        <div class="wind-label">Knots Average</div>
-                    </div>
-                    <div class="wind-item">
-                        <div class="wind-value">90%</div>
-                        <div class="wind-label">Windy Days</div>
-                    </div>
-                    <div class="wind-item">
-                        <div class="wind-value">N/NE</div>
-                        <div class="wind-label">Off-shore Lagune</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Accommodation -->
-            <div class="accommodation">
-                <div class="accommodation-title">🏡 LUXURY PRIVATE VILLA</div>
-                <div class="accommodation-features">
-                    <div class="feature-item">Swimming pool</div>
-                    <div class="feature-item">Delicious buffet</div>
-                    <div class="feature-item">Bungalow, chalet suite</div>
-                    <div class="feature-item">Private bathrooms</div>
-                    <div class="feature-item">Lagune view</div>
-                    <div class="feature-item">Yoga and Gym</div>
-                </div>
-            </div>
-            
-            <!-- Pricing Section -->
-            <div class="pricing-section">
-                <div class="pricing-title">💰 PRICING BREAKDOWN</div>
-                
-                <div class="services-grid">
-                    <div class="service-item">
-                        <span class="service-name">9h Coaching and boat rescue service</span>
-                        <span class="service-price">€600.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-name">Yoga Classes</span>
-                        <span class="service-price">included with hotel</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-name">Video Coaching and analysis</span>
-                        <span class="service-price">€120.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-name">access to the best spot</span>
-                        <span class="service-price">€60.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-name">Shared bungalow in full pension</span>
-                        <span class="service-price">€906.50</span>
-                    </div>
-                    <div class="service-item total-service">
-                        <span class="service-name">Total Services Included</span>
-                        <span class="service-price">€1,686.50</span>
-                    </div>
-                </div>
-                
-                <div class="price-options">
-                    <a href="mailto:info@windprana.com?subject=Booking%20Inquiries%20-%20Details&body=Hello,%0D%0A%0D%0AI'm intereted in the Dakhla coaching from 21.04.26 - 28.04.26, we are 2 persons and will share the bungalow together.%0D%0A%0D%0AI would like to receive more information:%0D%0A  - About deposit and cancellation details.%0D%0A  - As well as help organizing transportation to fit the schedule of the clinics you are giving.%0D%0A%0D%0AThank you." target="_blank" class="price-card">
-                        <div class="price-type">Shared Bungalow<br>(2 single bed)</div>
-                        <div class="price-amount">€1,686.50</div>
-                        <div class="price-desc">Complete stay / pers. (add tax on accomodation)</div>
-                        <div class="featured-badge">RECOMMENDED</div>
-                    </a>
-                    <a href="mailto:info@windprana.com?subject=Booking%20Inquiries%20-%20Details&body=Hello,%0D%0A%0D%0AI'm intereted in the Dakhla coaching from 21.04.26 - 28.04.26, I want information about room upgrade available.%0D%0A%0D%0AAnd I would like to receive more information:%0D%0A  - About deposit and cancellation details.%0D%0A  - As well as help organizing transportation to fit the schedule of the clinics you are giving.%0D%0A%0D%0AThank you." target="_blank" class="price-card featured">
-                        <div class="price-type">Room upgrade<br>chalet or suite</div>
-                        <div class="price-amount">Ask Us</div>
-                        <div class="price-desc">Complete stay</div>
-                    </a>
-                </div>
-                
-                <div class="price-note">
-                    <p><em>* not included flights estimate RAM (1 baggage + 1 boardbag): €400</em></p>
-                </div>
+            <div class="wind-stat">
+                <div class="wind-value">N/NE</div>
+                <div class="wind-label">Off-shore Lagune</div>
             </div>
         </div>
-        
-        <!-- CTA -->
-        <div class="cta-section">
-            <h2 class="cta-title">READY FOR YOUR SAHARAN DREAM?</h2>
-            <p class="cta-subtitle">Limited spots • the closest kite destination awaits</p>
-            <a href="mailto:info@windprana.com?subject=Booking%20Inquiries%20-%20Details&body=Hello,%0D%0A%0D%0AI'm intereted in the coaching in Dakhla from 21.04.26 - 28.04.26 .%0D%0A%0D%0AI would like to receive more information:%0D%0A  - About deposit and cancellation details.%0D%0A  - As well as help organizing transportation to fit the schedule of the clinics you are giving.%0D%0A%0D%0AThank you." target="_blank" class="cta-button">BOOK NOW</a>
+
+        <p style="margin-top: 24px; font-size: 16px; opacity: 0.9;">
+            April is the perfect season for Dakhla.<br>
+            <strong>Consistent strong winds, perfect flat water, and endless riding opportunities in one of the world's best kite destinations</strong>
+        </p>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="included-section">
+        <span class="section-label">📦 What's Included</span>
+        <h2 class="section-title">Complete Package Breakdown</h2>
+
+        <div class="package-grid">
+            <div class="package-item">
+                <span class="package-name">🏄 Coaching package option:<br>4h = 360€<br>6h = 513€<br>8h = 648€<br>10h = 766€</span>
+                <span class="package-desc">Professional video coaching with radio communication</span>
+            </div>
+            <div class="package-item">
+                <span class="package-name">🧘 Daily Yoga Classes</span>
+                <span class="package-desc">Hatha & Ashtanga sessions - Included</span>
+            </div>
+            <div class="package-item">
+                <span class="package-name">🎥 Video Coaching & Analysis</span>
+                <span class="package-desc">Evening debrief sessions with detailed feedback</span>
+            </div>
+            <div class="package-item">
+                <span class="package-name">🏖️ Access to the Best Spot</span>
+                <span class="package-desc">Premium location and facilities</span>
+            </div>
+            <div class="package-item">
+                <span class="package-name">🏡 Shared Bungalow Full Pension</span>
+                <span class="package-desc">Accommodation with all meals included</span>
+            </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            WINDPRANA • Dakhla Kitesurf Experience<br>
-            📧 <a href="mailto:info@windprana.com">info@windprana.com</a> • 🌐 <a href="https://windprana.com">www.windprana.com</a>
+
+        <div class="bonus-grid">
+            <div class="bonus-item">
+                <strong>🎁 BONUS:</strong> Professional boat rescue service for safety and support
+            </div>
+            <div class="bonus-item">
+                <strong>🎁 BONUS:</strong> Evening video analysis sessions to accelerate your learning
+            </div>
+            <div class="bonus-item">
+                <strong>🎁 BONUS:</strong> Transportation assistance and guidance
+            </div>
         </div>
-    </div>
+
+        <div class="value-proposition">
+            <h3>Package Price start</h3>
+            <div class="price-reveal">€1,446.50 (4h coaching)</div>
+            <p class="price-details">
+                7 days all-inclusive • Shared Bungalow (2 single beds)<br>
+                Complete stay per person + tax on accommodation
+            </p>
+            <p class="price-details" style="margin-top: 12px; font-size: 16px;">
+                <strong>Want to upgrade?</strong><br>
+                Kite coaching or private accommodation - Contact us for pricing
+            </p>
+            <a href="mailto:info@windprana.com?subject=Booking%20Inquiries%20-%20Dakhla%202026&body=Hello,%0D%0A%0D%0AI'm%20interested%20in%20the%20Dakhla%20coaching%20from%2014-21%20April%202026.%0D%0A%0D%0AOption:%0D%0A☐%20Shared%20Bungalow%20(€1,686.50)%0D%0A☐%20Room%20Upgrade%20(ask%20for%20pricing)%0D%0A%0D%0AI%20would%20like%20to%20receive%20more%20information%20about:%0D%0A-%20Deposit%20and%20cancellation%20details%0D%0A-%20Transportation%20organization%0D%0A%0D%0AThank%20you!" class="inline-cta-btn" style="margin-top: 16px;">
+                I BOOK MY SPOT
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px; padding: 16px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+            <p style="font-size: 14px; opacity: 0.8;">
+                <em>* Flights not included. Estimated cost with RAM (1 baggage + 1 boardbag): €400</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="spots-left">⚠️ Limited spots available</div>
+        <h2>Ready for Your<br>Saharan Dream?</h2>
+        <p>
+            7 days of world-class kiting<br>
+            Expert coaching • Paradise conditions<br>
+            The closest premium destination from Europe
+        </p>
+        
+        <a href="mailto:info@windprana.com?subject=URGENT%20BOOKING%20Dakhla%202026&body=Hello,%0D%0A%0D%0AI%20absolutely%20want%20to%20join%20the%20Dakhla%20camp%20from%20April%2014-21,%202026.%0D%0A%0D%0AMy%20choice:%0D%0A☐%20Shared%20Bungalow%20-%20€1,686.50%0D%0A☐%20Room%20Upgrade%20-%20Ask%20for%20pricing%0D%0A%0D%0AMy%20level:%0D%0A☐%20Intermediate%0D%0A☐%20Advanced%0D%0A☐%20Expert%0D%0A%0D%0APlease%20provide%20information%20about:%0D%0A-%20Deposit%20and%20payment%20schedule%0D%0A-%20Cancellation%20policy%0D%0A-%20Transportation%20from%20airport%0D%0A%0D%0AContact%20me%20FAST!%0D%0A%0D%0ABest%20regards" class="final-cta-btn">
+            I BOOK NOW
+        </a>
+        
+        <p style="margin-top: 24px; font-size: 14px; opacity: 0.8;">
+            ✅ Reply within 24h • Flexible deposit • Help with transportation
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="margin-bottom: 12px; opacity: 0.8;">
+            <strong>WINDPRANA</strong> • Dakhla Kitesurf Experience
+        </p>
+        <p>
+            📧 <a href="mailto:info@windprana.com">info@windprana.com</a><br>
+            🌐 <a href="https://windprana.com">www.windprana.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Parallax effect on background
+        const heroBg = document.getElementById('heroBg');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            heroBg.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Generate floating particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Hide floating CTA when reaching footer or final CTA section
+        const floatingCta = document.querySelector('.floating-cta');
+        const footer = document.querySelector('footer');
+        const finalCtaSection = document.querySelector('.final-cta');
+        
+        window.addEventListener('scroll', () => {
+            const finalCtaRect = finalCtaSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Hide floating CTA when final CTA section enters viewport
+            if (finalCtaRect.top < windowHeight) {
+                floatingCta.classList.add('hidden');
+            } else if (window.scrollY > window.innerHeight * 0.9) {
+                floatingCta.classList.remove('hidden');
+            } else {
+                floatingCta.classList.add('hidden');
+            }
+        });
+
+        // Magnetic effect on CTA
+        const heroCta = document.querySelector('.hero-cta');
+        heroCta.addEventListener('mousemove', (e) => {
+            const rect = heroCta.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            heroCta.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+        });
+
+        heroCta.addEventListener('mouseleave', () => {
+            heroCta.style.transform = '';
+        });
+    </script>
 </body>
 </html>
