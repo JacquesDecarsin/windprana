@@ -9,6 +9,25 @@
     gtag('js', new Date());
     gtag('config', 'G-LGDBW4TEWY');
     </script>
+    <script>
+        // Ensure hero background video is muted and attempts to play (catch play promise rejection)
+        document.addEventListener('DOMContentLoaded', () => {
+            const vid = document.querySelector('.hero-bg video');
+            if (!vid) return;
+            // Force muted and playsInline for maximum autoplay compatibility
+            vid.muted = true;
+            vid.playsInline = true;
+            // In some browsers autoplay can be blocked; try to play and log if blocked
+            const playPromise = vid.play();
+            if (playPromise !== undefined) {
+                playPromise.catch((err) => {
+                    console.warn('Hero video autoplay prevented:', err);
+                    // As a fallback, show poster or keep muted and wait for user interaction
+                    vid.muted = true;
+                });
+            }
+        });
+    </script>
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
