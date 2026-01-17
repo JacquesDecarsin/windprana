@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windprana Morocco - Saharan Dream</title>
+    <style>
+        /* LANGUAGE TOGGLE - Same as French version but EN is active */
+        .language-toggle-container { position: fixed; top: 20px; right: 20px; z-index: 1001; display: flex; align-items: center; gap: 10px; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(20px); padding: 8px 15px; border-radius: 50px; box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3); border: 1px solid rgba(212, 165, 116, 0.2); }
+        .lang-label { font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; letter-spacing: 0.5px; }
+        .lang-label.active { color: #D4A574; }
+        .toggle-switch { position: relative; width: 50px; height: 26px; background: rgba(255, 255, 255, 0.1); border-radius: 50px; cursor: pointer; transition: background 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .toggle-switch.active { background: linear-gradient(135deg, #D4A574, #8B6914); border-color: transparent; }
+        .toggle-slider { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; background: white; border-radius: 50%; transition: transform 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }
+        .toggle-switch.active .toggle-slider { transform: translateX(24px); }
+        @media (max-width: 600px) { .language-toggle-container { top: 10px; right: 10px; padding: 6px 12px; } .lang-label { font-size: 12px; } .toggle-switch { width: 44px; height: 24px; } .toggle-slider { width: 16px; height: 16px; } .toggle-switch.active .toggle-slider { transform: translateX(20px); } }
+        
+        /* ALL OTHER STYLES FROM ORIGINAL - keeping exactly the same */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+        .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 24px 100px; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; }
+        .hero-bg video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; }
+        .bg-play-btn { position: absolute; z-index: 12; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; font-size: 28px; border: none; display: none; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(6px); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(212,165,116,0.8) 0%, rgba(139,105,20,0.6) 100%); animation: gradientShift 8s ease-in-out infinite; z-index: 1; }
+        @keyframes gradientShift { 0%, 100% { opacity: 0.8; } 50% { opacity: 0.6; } }
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+        .particle { position: absolute; width: 4px; height: 4px; background: rgba(255, 255, 255, 0.6); border-radius: 50%; animation: float linear infinite; }
+        @keyframes float { 0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) translateX(100px) scale(1); opacity: 0; } }
+        .hero-content { position: relative; z-index: 10; animation: fadeInUp 1s ease-out; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .location-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); padding: 10px 20px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); animation: fadeInUp 1s ease-out 0.2s backwards; transition: all 0.3s ease; }
+        .hero h1 { font-size: 72px; font-weight: 900; line-height: 0.9; margin-bottom: 20px; text-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); background: linear-gradient(135deg, #fff 0%, #D4A574 50%, #fff 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: fadeInUp 1s ease-out 0.4s backwards, shimmer 3s ease-in-out infinite; }
+        @keyframes shimmer { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } }
+        .hero-subtitle { font-size: 20px; opacity: 0.95; margin-bottom: 28px; font-weight: 500; line-height: 1.5; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); animation: fadeInUp 1s ease-out 0.6s backwards; }
+        .dates-box { display: inline-block; background: linear-gradient(135deg, #FF6B6B, #EE5A24); padding: 14px 28px; border-radius: 16px; font-weight: 700; font-size: 17px; margin-bottom: 36px; box-shadow: 0 12px 32px rgba(255, 107, 107, 0.5); animation: fadeInUp 1s ease-out 0.8s backwards, pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .hero-cta { display: block; background: #fff; color: #000; text-align: center; padding: 22px 40px; border-radius: 20px; text-decoration: none; font-weight: 900; font-size: 18px; box-shadow: 0 16px 48px rgba(255, 255, 255, 0.4); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); margin-bottom: 16px; animation: fadeInUp 1s ease-out 1s backwards; position: relative; overflow: hidden; }
+        .hero-cta::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: linear-gradient(135deg, #D4A574, #8B6914); transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
+        .hero-cta:hover::before { width: 400px; height: 400px; }
+        .hero-cta:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 24px 64px rgba(255, 255, 255, 0.5); color: #fff; }
+        .hero-cta span { position: relative; z-index: 1; }
+        .urgency-text { text-align: center; font-size: 15px; opacity: 0.95; margin-top: 12px; animation: fadeInUp 1s ease-out 1.2s backwards; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; z-index: 10; }
+        @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
+        .floating-cta { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #D4A574, #8B6914); padding: 16px 24px; z-index: 1000; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); transform: translateY(100%); animation: slideUp 0.5s ease-out 1s forwards; }
+        @keyframes slideUp { to { transform: translateY(0); } }
+        .floating-cta.hidden { transform: translateY(100%) !important; }
+        .floating-cta-btn { display: block; background: #fff; color: #8B6914; text-align: center; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; box-shadow: 0 4px 12px rgba(255,255,255,0.3); }
+        .expertise-section { background: linear-gradient(180deg, #000 0%, #1A0F0A 100%); padding: 80px 24px; }
+        .section-label { display: inline-block; background: rgba(212,165,116,0.15); color: #D4A574; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase; border: 1px solid rgba(212,165,116,0.3); }
+        .section-title { font-size: 32px; font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
+        .expert-text { font-size: 16px; line-height: 1.7; opacity: 0.9; margin-bottom: 24px; }
+        .expert-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+        .stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px 16px; text-align: center; }
+        .stat-number { font-size: 28px; font-weight: 900; color: #D4A574; margin-bottom: 4px; }
+        .stat-label { font-size: 12px; opacity: 0.7; line-height: 1.3; }
+        .inline-cta { background: linear-gradient(135deg, #D4A574, #8B6914); border-radius: 16px; padding: 24px; text-align: center; margin: 32px 0; }
+        .inline-cta-text { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .inline-cta-btn { display: inline-block; background: #fff; color: #000; padding: 16px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; }
+        .why-section { background: #000; padding: 56px 24px; }
+        .reason-card { background: linear-gradient(135deg, rgba(212,165,116,0.1), rgba(139,105,20,0.1)); border: 1px solid rgba(212,165,116,0.2); border-radius: 20px; padding: 24px; margin-bottom: 16px; }
+        .reason-icon { font-size: 32px; margin-bottom: 12px; }
+        .reason-title { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .reason-text { font-size: 15px; line-height: 1.6; opacity: 0.85; }
+        .gallery-section { padding: 56px 24px; background: linear-gradient(180deg, #1A0F0A 0%, #000 100%); }
+        .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 32px; }
+        .photo-card { position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: linear-gradient(135deg, #D4A574, #8B6914); display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-weight: 700; font-size: 14px; }
+        .photo-card.lessons { background-image: url('ressources/images/selection-photo-dakhla/dune-evasion-leve-du-soleil.JPG'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .photo-card.sunrise { background-image: url('ressources/images/selection-photo-dakhla/DJI_05042323-767x1024.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+        .photo-card.room { background-image: url('ressources/images/selection-photo-dakhla/Bungalow-1-1200x786.jpg.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .photo-card.coaching { background-image: url('ressources/images/selection-photo-dakhla/new-grab-unlock.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+        .photo-card.yoga { background-image: url('ressources/images/ashtanga_chaturanga.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .photo-card.pastry { background-image: url('ressources/images/selection-photo-dakhla/buffet-evasion.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .photo-card.large { grid-column: 1 / -1; aspect-ratio: 16/9; background-image: url('ressources/images/selection-photo-dakhla/DJI_0109-1-scaled.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .wind-section { background: linear-gradient(135deg, #D4A574, #8B6914); padding: 56px 24px; text-align: center; }
+        .wind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0; }
+        .wind-value { font-size: 40px; font-weight: 900; line-height: 1; margin-bottom: 8px; }
+        .wind-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+        .included-section { background: linear-gradient(180deg, #000 0%, #1A0A28 100%); padding: 56px 24px; }
+        .package-grid { display: grid; gap: 12px; margin-bottom: 32px; }
+        .package-item { background: rgba(255,255,255,0.08); border-left: 4px solid #D4A574; padding: 16px 20px; border-radius: 12px; }
+        .package-name { font-size: 15px; font-weight: 600; display: block; margin-bottom: 4px; }
+        .package-desc { font-size: 13px; opacity: 0.7; }
+        .value-proposition { background: linear-gradient(135deg, #D4A574, #8B6914); border-radius: 16px; padding: 32px 24px; text-align: center; margin-top: 32px; }
+        .price-reveal { font-size: 48px; font-weight: 900; margin: 16px 0; }
+        .price-details { font-size: 14px; opacity: 0.9; margin-bottom: 24px; }
+        .final-cta { background: linear-gradient(135deg, #D4A574, #8B6914); padding: 56px 24px 120px; text-align: center; }
+        .spots-left { display: inline-block; background: rgba(0,0,0,0.3); padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 700; margin-bottom: 24px; }
+        .final-cta h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; }
+        .final-cta p { font-size: 18px; opacity: 0.95; margin-bottom: 32px; line-height: 1.5; }
+        .final-cta-btn { display: inline-block; background: #fff; color: #8B6914; padding: 22px 48px; border-radius: 16px; text-decoration: none; font-weight: 900; font-size: 18px; box-shadow: 0 12px 40px rgba(255,255,255,0.3); }
+        footer { background: #000; padding: 32px 24px; text-align: center; font-size: 13px; opacity: 0.6; }
+        footer a { color: #D4A574; text-decoration: none; }
+        .bonus-grid { display: grid; gap: 12px; margin: 24px 0; }
+        .bonus-item { background: rgba(255,215,0,0.1); border-left: 4px solid #FFD700; padding: 16px 20px; border-radius: 12px; }
+        .bonus-item strong { color: #FFD700; }
+        @media (max-width: 768px) { .hero h1 { font-size: 56px; } }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle-container">
+        <span class="lang-label" id="label-fr">FR</span>
+        <div class="toggle-switch active" id="toggle" onclick="switchLanguage()">
+            <div class="toggle-slider"></div>
+        </div>
+        <span class="lang-label active" id="label-en">EN</span>
+    </div>
+
+    <div class="floating-cta">
+        <a href="mailto:info@windprana.com?subject=Booking%20Inquiries" class="floating-cta-btn">📧 BOOK NOW</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-bg"><video autoplay muted loop playsinline><source src="ressources/video/dakhla-video-2.mp4" type="video/mp4"></video></div>
+        <div class="hero-overlay"></div>
+        <div class="particles" id="particles"></div>
+        <button id="bgPlayBtn" class="bg-play-btn">▶</button>
+        <div class="hero-content">
+            <div class="location-badge">📍 Shaharan Dream, Morocco</div>
+            <h1>Dakhla<br>Morocco</h1>
+            <p class="hero-subtitle">Dakhla Evasion - Advanced kitesurf coaching in the desert lagoon</p>
+            <div class="dates-box">📅 <strong>14 - 21 APRIL 2026 (Available)</strong><br>21 - 28 APRIL 2026 (Fully Booked)</div>
+            <a href="#why-section" class="hero-cta"><span>I WANT TO KNOW MORE</span></a>
+            <p class="urgency-text">⚡ Limited spots available</p>
+        </div>
+        <div class="scroll-indicator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg></div>
+    </section>
+
+    <!-- All other sections remain identical to original -->
+    <section class="expertise-section">
+        <span class="section-label">🏄‍♂️ Expert coaching</span>
+        <h2 class="section-title">Coaching tailored to your need</h2>
+        <p class="expert-text">This is an <strong>advanced coaching camp</strong> with personalized attention in French or English. The program includes <strong>video analysis</strong>, <strong>live radio communication</strong>, and <strong>dedicated exercises</strong> tailored to your level.</p>
+        <p class="expert-text">Whether you're perfecting your <strong>BigAir, Strapless, or Foil</strong> techniques, I'll provide the expert guidance you need to reach the next level.</p>
+        <div class="expert-stats">
+            <div class="stat-card"><div class="stat-number">From 4 to 10 hours package</div><div class="stat-label">Video - Radio Coaching</div></div>
+            <div class="stat-card"><div class="stat-number">90%</div><div class="stat-label">Windy Days</div></div>
+            <div class="stat-card"><div class="stat-number">Learn from others</div><div class="stat-label">Group video debrief</div></div>
+        </div>
+        <div class="inline-cta"><p class="inline-cta-text">Ready to level up your riding?</p><a href="#gallery-section" class="inline-cta-btn">YES, I WANT TO PROGRESS</a></div>
+    </section>
+
+    <section id="why-section" class="why-section">
+        <span class="section-label">💎 The perfect spot</span>
+        <h2 class="section-title">Why Dakhla is a kiter's paradise</h2>
+        <div class="reason-card"><div class="reason-icon">🌊</div><h3 class="reason-title">Perfect Flat Lagoon to world class waves</h3><p class="reason-text">From the Main Lagoon, the Speed Spot and the Secret Spot to the waves of Lassarga and la Pointe d'Or you get butter flat water and long running waves. Ideal conditions for oldschool, big air new old school, and proper wave riding.</p></div>
+        <div class="reason-card"><div class="reason-icon">🌬️</div><h3 class="reason-title">Consistent Strong Wind</h3><p class="reason-text">April brings <strong>17-28 knots of steady wind</strong>, with 90% windy days. The offshore NE/N wind creates perfect conditions for all disciplines.</p></div>
+        <div class="reason-card"><div class="reason-icon">🏜️</div><h3 class="reason-title">Saharan Desert Meets Ocean</h3><p class="reason-text">Experience the unique landscape where golden sand dunes meet the water. A place exclusively for kiters, with maximum freedom.</p></div>
+        <div class="reason-card"><div class="reason-icon">🎯</div><h3 class="reason-title">Professional Setup</h3><p class="reason-text">Access to the best spots, boat rescue service included, and all the tips you need to focus on your progression.</p></div>
+        <div class="inline-cta"><p class="inline-cta-text">Convinced? Limited spots available</p><a href="mailto:info@windprana.com" class="inline-cta-btn">I BOOK NOW</a></div>
+    </section>
+
+    <section id="gallery-section" class="gallery-section">
+        <span class="section-label">📸 Preview</span>
+        <h2 class="section-title">Your Dakhla Experience</h2>
+        <div class="photo-grid">
+            <div class="photo-card large">Speed spot, Dakhla<br>Perfect Flat</div>
+            <div class="photo-card lessons">KITESURF<br>Lessons all level welcome</div>
+            <div class="photo-card sunrise">Wind and Dunes<br>A place only for kiters</div>
+            <div class="photo-card yoga">YOGA<br>Sharpen body & mind</div>
+            <div class="photo-card coaching">COACHING<br>BigAir, Strapless, Foil</div>
+            <div class="photo-card room">Lagune view<br>Outstanding hotel</div>
+            <div class="photo-card pastry">Full pension<br>Healthy & delicious meals</div>
+        </div>
+        <div class="inline-cta"><p class="inline-cta-text">Tempting?</p><a href="mailto:info@windprana.com" class="inline-cta-btn">YES, GIVE ME THE DETAILS</a></div>
+    </section>
+
+    <section class="wind-section">
+        <h2 style="font-size: 32px; font-weight: 900;">🌬️ DAKHLA WIND CONDITIONS</h2>
+        <div class="wind-grid">
+            <div class="wind-stat"><div class="wind-value">17-28</div><div class="wind-label">Knots Average</div></div>
+            <div class="wind-stat"><div class="wind-value">90%</div><div class="wind-label">Windy Days</div></div>
+            <div class="wind-stat"><div class="wind-value">N/NE</div><div class="wind-label">Off-shore Lagune</div></div>
+        </div>
+    </section>
+
+    <section class="included-section">
+        <span class="section-label">📦 What's Included</span>
+        <h2 class="section-title">Complete Package Breakdown</h2>
+        <div class="package-grid">
+            <div class="package-item"><span class="package-name">🏄 Coaching package option:<br>4h = 360€ | 6h = 513€ | 8h = 648€ | 10h = 766€</span><span class="package-desc">Professional video coaching with radio communication</span></div>
+            <div class="package-item"><span class="package-name">🧘 Daily Yoga Classes</span><span class="package-desc">Hatha & Ashtanga sessions - Included</span></div>
+            <div class="package-item"><span class="package-name">🎥 Video Coaching & Analysis</span><span class="package-desc">Evening debrief sessions with detailed feedback</span></div>
+            <div class="package-item"><span class="package-name">🏖️ Access to the Best Spot</span></div>
+            <div class="package-item"><span class="package-name">🏡 Shared Bungalow Full Pension</span></div>
+        </div>
+        <div class="bonus-grid">
+            <div class="bonus-item"><strong>🎁 BONUS:</strong> Professional boat rescue service</div>
+            <div class="bonus-item"><strong>🎁 BONUS:</strong> Evening video analysis sessions</div>
+            <div class="bonus-item"><strong>🎁 BONUS:</strong> Transportation assistance</div>
+        </div>
+        <div class="value-proposition">
+            <h3>Package Price start</h3>
+            <div class="price-reveal">€1,446.50 (4h coaching)</div>
+            <p class="price-details">7 days all-inclusive • Shared Bungalow<br>Complete stay per person + tax</p>
+            <a href="mailto:info@windprana.com" class="inline-cta-btn">I BOOK MY SPOT</a>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="spots-left">⚠️ Limited spots available</div>
+        <h2>Ready for Your<br>Saharan Dream?</h2>
+        <p>7 days of world-class kiting<br>Expert coaching • Paradise conditions</p>
+        <a href="mailto:info@windprana.com" class="final-cta-btn">I BOOK NOW</a>
+    </section>
+
+    <footer>
+        <p><strong>WINDPRANA</strong> • Dakhla Kitesurf Experience</p>
+        <p>📧 <a href="mailto:info@windprana.com">info@windprana.com</a><br>🌐 <a href="https://windprana.com">www.windprana.com</a></p>
+    </footer>
+
+    <script>
+        // Language switcher - IMPORTANT: Set currentLang to 'en' for English page
+        let currentLang = 'en';
+
+        function switchLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            document.cookie = `language=${currentLang}; path=/; max-age=31536000`;
+            
+            // Redirect to the appropriate file
+            if (currentLang === 'fr') {
+                window.location.href = 'dakhla-french.html'; // UPDATE THIS to your French Dakhla filename
+            } else {
+                window.location.href = 'dakhlaoffer-eng.html'; // UPDATE THIS to match this English file's name
+            }
+        }
+
+        // Page load initialization
+        window.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('toggle');
+            const labelFr = document.getElementById('label-fr');
+            const labelEn = document.getElementById('label-en');
+
+            // Set correct display for EN (English is active)
+            if (currentLang === 'en') {
+                toggle.classList.add('active');
+                labelFr.classList.remove('active');
+                labelEn.classList.add('active');
+            }
+            
+            // Check cookie for automatic redirect
+            const cookies = document.cookie.split(';');
+            let savedLang = null;
+            for (let cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === 'language') {
+                    savedLang = value;
+                    break;
+                }
+            }
+            if (savedLang && savedLang !== currentLang) {
+                if (savedLang === 'fr') {
+                    window.location.href = 'dakhla-french.html';
+                }
+            }
+        });
+
+        // Parallax & particles
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            p.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('particles').appendChild(p);
+        }
+        
+        const floatingCta = document.querySelector('.floating-cta');
+        const finalCtaSection = document.querySelector('.final-cta');
+        window.addEventListener('scroll', () => {
+            const rect = finalCtaSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                floatingCta.classList.add('hidden');
+            } else if (window.scrollY > window.innerHeight * 0.9) {
+                floatingCta.classList.remove('hidden');
+            } else {
+                floatingCta.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
