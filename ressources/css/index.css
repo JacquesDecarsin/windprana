@@ -205,27 +205,140 @@ nav ul li a:hover::after {
 
 /* -------------------- HERO SECTION -------------------- */
 .hero {
+    position: relative;
     height: 100vh;
-    background-image: url('../images/captown.webp');
-    background-size: cover;
-    background-position: top center;
-    display: flex;
     margin-top: 5rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: #FFFFFF;
+    overflow: hidden;
+    color: #fff;
 }
 
+/* Video background */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    /* Fallback: shows poster image when no video source is set */
+    background: url('../images/captown.webp') center/cover no-repeat;
+}
+
+/* Dark gradient overlay for readability */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(0,0,0,0.72) 100%
+    );
+    z-index: 1;
+}
+
+/* Content sits above video + overlay */
 .hero-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 860px;
     padding: 2rem;
+    text-align: center;
+}
+
+/* Slides wrapper */
+.hero-slides {
+    width: 100%;
+    min-height: 260px;
+    position: relative;
+}
+
+/* Individual slide */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    pointer-events: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+}
+
+/* Section label above title */
+.hero-label {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #45B7A4;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(69, 183, 164, 0.45);
+    border-radius: 2rem;
 }
 
 .hero h1 {
+    font-size: 2.8rem;
+    color: #fff;
     margin-bottom: 2rem;
-    font-size: 3rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    line-height: 1.2;
+}
+
+/* Bullet navigation */
+.hero-bullets {
+    display: flex;
+    gap: 10px;
+    margin-top: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.55);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-bullet:hover {
+    border-color: #45B7A4;
+    transform: scale(1.2);
+}
+
+.hero-bullet.active {
+    background: #45B7A4;
+    border-color: #45B7A4;
+    transform: scale(1.25);
+}
+
+/* Progress ring on active bullet */
+.hero-bullet.active {
+    box-shadow: 0 0 0 3px rgba(69, 183, 164, 0.3);
 }
 
 /* -------------------- INTRO SECTION -------------------- */
@@ -250,6 +363,398 @@ nav ul li a:hover::after {
 
 .intro-image {
     flex: 1;
+}
+
+/* -------------------- ACCORDION SECTIONS -------------------- */
+.accordion-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(69, 183, 164, 0.2);
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 2.5rem;
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    transition: background 0.3s ease;
+    user-select: none;
+    gap: 1rem;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    background: #f4fcfb;
+}
+
+.accordion-title-group {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.accordion-number {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: #45B7A4;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    min-width: 2rem;
+    opacity: 0.6;
+}
+
+.accordion-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+    text-align: left;
+}
+
+.accordion-tagline {
+    font-size: 0.83rem;
+    color: #8A65C9;
+    margin-left: auto;
+    padding-right: 1rem;
+    font-style: italic;
+    display: none;
+    opacity: 0.75;
+}
+
+@media (min-width: 640px) {
+    .accordion-tagline { display: block; }
+}
+
+.accordion-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #45B7A4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, border-color 0.3s, background 0.3s;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+    border-color: #8A65C9;
+    background: #8A65C9;
+}
+
+.accordion-icon svg {
+    width: 11px;
+    height: 11px;
+    fill: none;
+    stroke: #45B7A4;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke 0.3s;
+}
+
+.accordion-header.active .accordion-icon svg {
+    stroke: #fff;
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f9f9f9;
+}
+
+.accordion-body.open {
+    max-height: 1000px;
+}
+
+.accordion-body-inner {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+.acc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.acc-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.acc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.acc-card a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.acc-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    transition: height 0.4s ease;
+}
+
+.acc-card-text {
+    padding: 0.8rem 1rem;
+}
+
+.acc-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+    color: #8A65C9;
+}
+
+.acc-card p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0 0 0.2rem;
+    line-height: 1.45;
+}
+
+.acc-card strong {
+    color: #45B7A4;
+}
+
+.acc-desc {
+    font-size: 0.93rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-style: italic;
+    max-width: 580px;
+    text-align: left;
+}
+
+.acc-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.btn-acc {
+    display: inline-block;
+    padding: 0.55rem 1.3rem;
+    border: 2px solid #45B7A4;
+    color: #45B7A4;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-acc:hover {
+    background: #45B7A4;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.acc-testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+}
+
+.acc-testimonial {
+    background: #fff;
+    border-left: 3px solid #45B7A4;
+    padding: 1rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.acc-testimonial p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    margin: 0 0 0.6rem;
+    font-style: italic;
+}
+
+.acc-testimonial cite {
+    font-size: 0.75rem;
+    color: #8A65C9;
+    letter-spacing: 0.08em;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.acc-instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.acc-instagram-grid a {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.acc-instagram-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.acc-instagram-grid a:hover img {
+    transform: scale(1.06);
+}
+
+/* -------------------- CARD ACCORDION -------------------- */
+.acc-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.acc-card {
+    cursor: pointer;
+}
+
+.acc-card-toggle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #45B7A4;
+    margin-top: 0.5rem;
+    transition: color 0.25s;
+}
+
+.acc-card.open .acc-card-toggle {
+    color: #8A65C9;
+}
+
+.acc-card.open {
+    border: 2px solid #45B7A4;
+}
+
+/* Panneau de détail sous la grille */
+.acc-card-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid transparent;
+}
+
+.acc-card-panel.open {
+    max-height: 600px;
+    border-color: #45B7A4;
+    border-top: none;
+}
+
+.acc-card-body-inner {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.acc-panel-close {
+    align-self: flex-end;
+    background: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    color: #666;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.acc-panel-close:hover {
+    border-color: #8A65C9;
+    color: #8A65C9;
+}
+
+.acc-card-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.acc-card-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.acc-card-details li {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.acc-card-desc {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .accordion-header {
+        padding: 1.1rem 1.2rem;
+    }
+    .accordion-body-inner {
+        padding: 1.5rem 1.2rem 2rem;
+    }
+    .accordion-header h2 {
+        font-size: 1rem;
+    }
+    .acc-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .acc-instagram-grid {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .acc-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* -------------------- coaching SECTION -------------------- */
@@ -579,6 +1084,14 @@ footer {
     h2 {
         font-size: 1.8rem;
     }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-slides {
+        min-height: 300px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -650,6 +1163,18 @@ footer {
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 1.8rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-slides {
+        min-height: 320px;
+    }
+
+    .hero-label {
+        font-size: 0.68rem;
     }
     
     .instagram-grid {

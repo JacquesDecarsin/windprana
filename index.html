@@ -19,11 +19,9 @@
             <!-- Navigation menu -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="coaching.html">Coaching</a></li>
-                    <li><a href="kite.html">Kite</a></li>
-                    <li><a href="yoga.html">Yoga</a></li>
-                    <li><a href="spots.html">Spots</a></li>
+                    <li><a href="#section-kite-camp">KiteCamp</a></li>
+                    <li><a href="#section-coaching">Coaching</a></li>
+                    <li><a href="#section-yoga">Yoga</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="booking.html">Booking</a></li>
                 </ul>
@@ -37,240 +35,446 @@
             </div>
         </header>
     
-        <!-- Hero section with large image -->
+        <!-- Hero section with video background -->
         <section class="hero">
+
+            <!-- Video background — swap src once you have the file -->
+            <video class="hero-video" autoplay muted loop playsinline poster="ressources/images/captown.webp">
+                <!-- <source src="ressources/videos/hero.mp4" type="video/mp4"> -->
+            </video>
+            <div class="hero-overlay"></div>
+
+            <!-- Sliding content -->
             <div class="hero-content">
-                <h1>Let the Wind Lift You to the Moon, and Root Your Breath in the Elements.</h1>
-                <a href="coaching.html" class="btn-primary">Explore our adventures</a>
+
+                <div class="hero-slides">
+
+                    <div class="hero-slide active">
+                        <p class="hero-label">Kite Camp</p>
+                        <h1>Let the Wind Lift You to the Moon, and Root Your Breath in the Elements.</h1>
+                        <a href="#section-kite-camp" class="btn-primary">Explore our Kite Camps</a>
+                    </div>
+
+                    <div class="hero-slide">
+                        <p class="hero-label">Coaching</p>
+                        <h1>Big Air. Strapless. Foil.<br>Find your discipline, master the wind.</h1>
+                        <a href="#section-coaching" class="btn-primary">What is Coaching?</a>
+                    </div>
+
+                    <div class="hero-slide">
+                        <p class="hero-label">Yoga</p>
+                        <h1>Breathe deep. Move with intention.<br>Root yourself in the elements.</h1>
+                        <a href="yoga.html" class="btn-primary">Yoga practice</a>
+                    </div>
+
+                    <div class="hero-slide">
+                        <p class="hero-label">Spots</p>
+                        <h1>Kenya. Morocco. Ireland.<br>Breathtaking destinations await.</h1>
+                        <a href="spots.html" class="btn-primary">Sail to Spots</a>
+                    </div>
+
+                    <div class="hero-slide">
+                        <p class="hero-label">Book Now</p>
+                        <h1>Ready to take off?<br>Your next adventure starts here.</h1>
+                        <a href="booking.html" class="btn-primary">Book a Session</a>
+                    </div>
+
+                </div>
+
+                <!-- Bullet navigation -->
+                <div class="hero-bullets" role="tablist" aria-label="Hero navigation">
+                    <button class="hero-bullet active" data-index="0" role="tab" aria-selected="true" aria-label="Adventures"></button>
+                    <button class="hero-bullet" data-index="1" role="tab" aria-selected="false" aria-label="Kite Coaching"></button>
+                    <button class="hero-bullet" data-index="2" role="tab" aria-selected="false" aria-label="Yoga"></button>
+                    <button class="hero-bullet" data-index="3" role="tab" aria-selected="false" aria-label="Spots"></button>
+                    <button class="hero-bullet" data-index="4" role="tab" aria-selected="false" aria-label="Book Now"></button>
+                </div>
+
             </div>
         </section>
     
-        <!-- Introduction section -->
-        <section class="intro">
-            <div class="container">
-                <div class="intro-text">
-                    <h2>WindPrana</h2>
-                    <p>Aim to take you to breathtaking spots, diving in the wind and sheltering yourself in the elements. With us, you'll change and push your practice and vision.</p>
-                </div>
-                <div class="intro-image">
-                    <img src="ressources/images/sud_de_la_france.png" alt="sudfrance" loading="lazy"/>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Popular coaching section -->
-        <section class="coaching">
-            <div class="container">
-                <h2>Upcoming Adventures</h2>
-                <div class="coaching-grid">
-                    <!-- Trip 1 -->
-                    <article class="coaching-card">
-                        <a href="coaching.html#kenya">
-                            <div class="coaching-image">
-                                <img src="ressources/images/diani_kenya.jpg" alt="diani beach" loading="lazy">
-                            </div>
-                            <h3>Kashkazi Season</h3>
-                            <p>Diani Beach - Kenya</p>
-                            <p>Dates: 21st January - 7th february 2026 <br><strong>(2 rooms left)</strong></p>
-                        </a>
-                    </article>
-                    
-                    <!-- Trip 2 -->
-                    <article class="coaching-card">
-                        <a href="coaching.html#morocco">
-                            <div class="coaching-image">
-                                <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="dune-blanche-dakhla" loading="lazy">
-                            </div>
-                            <h3>Saharan Dream</h3>
-                            <p>Where Desert and Ocean meets</p>
-                            <p>Dates: 14th - 21st April 2026 <strong>(Available)</strong><br>
-                21st - 28 April 2026 <strong>(Fully booked)</strong></p>
-                        </a>
-                    </article>
-                    
-                    <!-- Trip 3 -->
-                    <article class="coaching-card">
-                        <a href="coaching.html#ireland">
-                            <div class="coaching-image">
-                                <img src="ressources/images/ireland.webp" alt="ireland" loading="lazy">
-                            </div>
-                            <h3>Wild Atlantic, Goat and Loch</h3>
-                            <p>Explore the Irish stormy coast line</p>
-                            <p>Dates: Soon</p>
-                        </a>
-                    </article>
-                </div>
-                <div class="coaching-link">
-                    <a href="coaching.html" class="btn-secondary">View all our coaching</a>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Kite coaching section -->
-        <section class="kite">
-            <div class="container">
-                <h2>Kite Coaching</h2>
-                <p>Kite is all about wind.
-                    Wind is the breathing of nature.
-                    Then kite is all about natural breathing.</p>
-                <div class="kitesurf-grid">
-                    <!-- Big Air -->
-                    <article class="kitesurf-card">
-                        <a href="kite.html#big-air">
-                            <div class="bigair-image">
-                                <img src="ressources/images/bigair_section.png" alt="big-air image" loading="lazy">
-                            </div>
-                            <h3>Big Air</h3>
-                            <p>Go high, with style. Come down safe and smooth...As if an old friend was carrying you around.</p>
-                        </a>
-                    </article>      
-                    <!-- Strapless -->
-                    <article class="kitesurf-card">
-                        <a href="kite.html#strapless">
-                            <div class="strapless-image">
-                                <img src="ressources/images/strapless.png" alt="strapless freestyle board drag" loading="lazy">
-                            </div>
-                            <h3>Strapless</h3>
-                            <p>This is about carving and slashing smooth ramp, and sometimes go high. This is all about technicity</p>
-                        </a>
-                    </article>
-                        
-                    <!-- Foil -->
-                    <article class="kitesurf-card">
-                        <a href="kite.html#foiling">
-                            <div class="foiling-image">
-                                <img src="ressources/images/backgroundfoil-Modifié.jpg" alt="photo de foil" loading="lazy">
-                            </div>
-                            <h3>Foil</h3>
-                            <p>An Aerial Flow in Silence. Almost an Opera</p>
-                        </a>
-                    </article>
-                </div>
-                <div class="kitesurf-link">
-                    <a href="kite.html" class="btn-secondary">Explore more</a>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Yoga section -->
-        <section class="yoga">
-            <div class="container">
-                <h2>Yoga</h2>
-                <p>Yoga is all about breath.
-                    Breath is all about life.
-                    Then Kite is all about Life as it is bounded to Breath.
-                    Immerse youself in both, by experiencing our camp.</p>
-                <div class="yoga-grid">
-                    <!-- Ashtanga -->
-                    <article class="yoga-card">
-                        <a href="yoga.html#ashtanga-yoga">
-                            <div class="ashtanga-image">
-                                <img src="ressources/images/ashtanga_chaturanga.jpg" alt="ashtanga yoga image" loading="lazy">
-                            </div>
-                            <h3>Ashtanga Yoga</h3>
-                            <p>Intense, Energizing, and easy to remember, Ashtanga bring your focus and strenght up as nothing else.</p>
-                        </a>
-                    </article>      
-                    <!-- Hatha -->
-                    <article class="yoga-card">
-                        <a href="yoga.html#hatha-yoga">
-                            <div class="hatha-image">
-                                <img src="ressources/images/hatha_yoga.jpg" alt="hatha yoga image" loading="lazy">
-                            </div>
-                            <h3>Hatha Yoga</h3>
-                            <p>More relaxing, less intense, more balanced and suttle as it's name suggest. This is a daily healthy practice</p>
-                        </a>
-                    </article>
-                    <!-- Pranayama & Meditation -->
-                    <article class="yoga-card">
-                        <a href="yoga.html#pranayama-yoga">
-                            <div class="pranayama-image">
-                                <img src="ressources/images/pranayama.jpg" alt="pranayama meditation image" loading="lazy">
-                            </div>
-                            <h3>Pranayama & Meditation</h3>
-                            <p>Breathing exercises bring mental clarity and physiological control. enhancing Focus and Calm while kitesurfing</p>
-                        </a>
-                    </article>
-                </div>
-            </div>
-            <div class="yoga-link">
-                <a href="yoga.html" class="btn-secondary">Explore more</a>
-            </div>
-        </section>
-    
-        <!-- Testimonials section -->
-        <section class="testimonials">
-            <div class="container">
-                <h2>What our adventurers say</h2>
-                <div class="testimonials-slider">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial">
-                        <p>Parfait Un plaisir et un kite réglé à la perfection Merciiiii</p>
-                        <cite>Catherine Lacroix</cite>
+        <!-- ACCORDION SECTIONS -->
+        <section class="accordion-wrapper">
+
+            <!-- 01 — Upcoming Adventures -->
+            <div class="accordion-item" id="section-kite-camp">
+                <div class="accordion-header" onclick="toggleAccordion(this)" role="button" aria-expanded="false" tabindex="0">
+                    <div class="accordion-title-group">
+                        <span class="accordion-number">01</span>
+                        <h2>Kite Camp</h2>
                     </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial">
-                        <p>Upwind lessonI kite already multiple seasons, but upwind was always difficult. With good teaching, my position and thereby my upwind skills improved!</p>
-                        <cite>Lennart Veringmeier</cite>
+                    <span class="accordion-tagline">Kenya · Morocco · Ireland</span>
+                    <div class="accordion-icon" aria-hidden="true">
+                        <svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12"/><line x1="0" y1="6" x2="12" y2="6"/></svg>
                     </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial">
-                        <p>Fantastic perfection courseVery professional course! Focussed on what I wanted to perfect. The time was to short to evolve even more, but would certainly recommend this school / course for perfection of your riding level.</p>
-                        <cite>Damien Desbuquoit</cite>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Windprana leads to path and place where breathing comes from the forces of nature, diving in the wind and sheltering yourself in the elements. With us, you'll change and push your practice and vision.</p>
+                        <div class="acc-grid-wrapper">
+                            <div class="acc-grid">
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'kenya')">
+                                    <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach Kenya" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Kashkazi Season</h3>
+                                        <p>Diani Beach — Kenya</p>
+                                        <p>21 Jan – 7 Feb 2026 · <strong>2 rooms left</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'morocco')">
+                                    <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla Morocco" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Saharan Dream</h3>
+                                        <p>Desert meets Ocean — Morocco</p>
+                                        <p>14–21 Apr <strong>(Available)</strong> · 21–28 Apr <strong>(Full)</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'ireland')">
+                                    <img src="ressources/images/ireland.webp" alt="Ireland" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Wild Atlantic</h3>
+                                        <p>Irish stormy coastline</p>
+                                        <p><strong>Dates coming soon</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-kenya">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach">
+                                    </div>
+                                    <ul class="acc-card-details">
+                                        <li>📅 <strong>Dates :</strong> 21 Jan – 7 Feb 2026</li>
+                                        <li>💰 <strong>Price :</strong> €XXX / person</li>
+                                        <li>🛏 <strong>Availability :</strong> 2 rooms left</li>
+                                    </ul>
+                                    <a href="booking.html" class="btn-acc">Book now →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-morocco">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla">
+                                    </div>
+                                    <ul class="acc-card-details">
+                                        <li>📅 <strong>Dates :</strong> 14–21 Apr / 21–28 Apr 2026</li>
+                                        <li>💰 <strong>Price :</strong> €XXX / person</li>
+                                        <li>🛏 <strong>Availability :</strong> 1st week available</li>
+                                    </ul>
+                                    <a href="booking.html" class="btn-acc">Book now →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-ireland">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/ireland.webp" alt="Ireland">
+                                    </div>
+                                    <ul class="acc-card-details">
+                                        <li>📅 <strong>Dates :</strong> Coming soon</li>
+                                        <li>💰 <strong>Price :</strong> TBA</li>
+                                        <li>🛏 <strong>Availability :</strong> Open for interest</li>
+                                    </ul>
+                                    <a href="booking.html" class="btn-acc">Register interest →</a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    
-        <!-- Instagram or photo gallery section -->
-        <section class="instagram">
-            <div class="container">
-                <h2>Follow our adventures</h2>
-                <div class="instagram-grid">
-                    <!-- 6 spots for Instagram photos -->
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/p/DLp3VFWI0CU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                            <!-- Image 1 -->
-                             <img src="ressources/images/sunset.png" alt="couché de soleil" loading="lazy">
-                        </a>
+
+            <!--section 2-->
+            <div class="accordion-item" id="section-coaching">
+                <div class="accordion-header" onclick="toggleAccordion(this)" role="button" aria-expanded="false" tabindex="0">
+                    <div class="accordion-title-group">
+                        <span class="accordion-number">02</span>
+                        <h2>Coaching</h2>
                     </div>
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/reel/DK961FkNeP5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                            <!-- Image 2 -->
-                             <img src="ressources/images/whatwecrave.png" alt="Foiling - What we crave" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/reel/DKXOeJGNJP-/?utm_source=ig_web_copy_link" target="_blank">
-                            <!-- Image 3 -->
-                             <img src="ressources/images/boardoffshadow.png" alt="boardoff shadow" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/reel/DKNAeAqNLXq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                            <!-- Image 4 -->
-                             <img src="ressources/images/latebackminiature.png" alt="Kiteloop lateback analysis" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/reel/DKr7gBqN-vy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                            <!-- Image 5 -->
-                             <img src="ressources/images/mondayinmyface.png" alt="Dune Blanche Monday Crash" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="instagram-item">
-                        <a href="https://www.instagram.com/p/DKpLBsWte4K/?utm_source=ig_web_copy_link" target="_blank">
-                            <!-- Image 6 -->
-                             <img src="ressources/images/yogaandkite.png" alt="yoga and kitesurf" loading="lazy">
-                        </a>
+                    <span class="accordion-tagline">Big Air · Strapless · Foil</span>
+                    <div class="accordion-icon" aria-hidden="true">
+                        <svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12"/><line x1="0" y1="6" x2="12" y2="6"/></svg>
                     </div>
                 </div>
-                <div class="instagram-link">
-                    <a href="https://www.instagram.com/windprana/" target="_blank" class="btn-secondary">Follow us on Instagram</a>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p class="acc-desc">Kite is all about wind. Wind is the breathing of nature. Then kite is all about natural breathing.</p>
+                        <div class="acc-grid-wrapper">
+                            <div class="acc-grid">
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'bigair')">
+                                    <img src="ressources/images/bigair_section.png" alt="Big Air" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Big Air</h3>
+                                        <p>Go high, with style. Come down safe and smooth.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'strapless')">
+                                    <img src="ressources/images/strapless.png" alt="Strapless" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Strapless</h3>
+                                        <p>Carving and slashing smooth ramps. Pure technicity.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'foil')">
+                                    <img src="ressources/images/backgroundfoil-Modifié.jpg" alt="Foil" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Foil</h3>
+                                        <p>An aerial flow in silence. Almost an opera.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-bigair">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/bigair_section.png" alt="Big Air">
+                                    </div>
+                                    <p class="acc-card-desc">Master the art of jumping high with control and style. We work on kite timing, board pop, body position and safe landing techniques.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Kite timing & power strokes</li>
+                                        <li>✅ Board pop and body position</li>
+                                        <li>✅ Safe landings</li>
+                                        <li>✅ Loop initiation</li>
+                                    </ul>
+                                    <a href="kite.html#big-air" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-strapless">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/strapless.png" alt="Strapless">
+                                    </div>
+                                    <p class="acc-card-desc">Strapless riding is the most technical and surf-inspired form of kiting. We cover foot placement, wave reading and board control without straps.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Foot placement & balance</li>
+                                        <li>✅ Wave reading</li>
+                                        <li>✅ Carving & slashing</li>
+                                        <li>✅ Board recovery</li>
+                                    </ul>
+                                    <a href="kite.html#strapless" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-foil">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/backgroundfoil-Modifié.jpg" alt="Foil">
+                                    </div>
+                                    <p class="acc-card-desc">Foiling takes you above the water in near silence. We teach body position, mast control, pitch and roll management for a smooth gliding experience.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Body position & balance</li>
+                                        <li>✅ Pitch & roll control</li>
+                                        <li>✅ Gybes & tacks on foil</li>
+                                        <li>✅ Light wind efficiency</li>
+                                    </ul>
+                                    <a href="kite.html#foiling" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- 03 — Yoga -->
+             <div class="accordion-item" id="section-yoga">
+                <div class="accordion-header" onclick="toggleAccordion(this)" role="button" aria-expanded="false" tabindex="0">
+                    <div class="accordion-title-group">
+                        <span class="accordion-number">03</span>
+                        <h2>Yoga</h2>
+                    </div>
+                    <span class="accordion-tagline">Ashtanga · Hatha · Pranayama</span>
+                    <div class="accordion-icon" aria-hidden="true">
+                        <svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12"/><line x1="0" y1="6" x2="12" y2="6"/></svg>
+                    </div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p class="acc-desc">Yoga is all about breath. Breath is all about life. Immerse yourself in both by experiencing our camp.</p>
+                        <div class="acc-grid-wrapper">
+                            <div class="acc-grid">
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'ashtanga')">
+                                    <img src="ressources/images/ashtanga_chaturanga.jpg" alt="Ashtanga yoga" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Ashtanga</h3>
+                                        <p>Intense, energizing. Builds focus and strength.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'hatha')">
+                                    <img src="ressources/images/hatha_yoga.jpg" alt="Hatha yoga" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Hatha</h3>
+                                        <p>Relaxing, balanced and subtle. A daily healthy practice.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                                <div class="acc-card" onclick="toggleCardAccordion(this, 'pranayama')">
+                                    <img src="ressources/images/pranayama.jpg" alt="Pranayama meditation" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Pranayama &amp; Meditation</h3>
+                                        <p>Mental clarity and calm. Focus on and off the water.</p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-ashtanga">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/ashtanga_chaturanga.jpg" alt="Ashtanga">
+                                    </div>
+                                    <p class="acc-card-desc">A dynamic, flowing practice that builds heat and stamina. Perfect complement to kite sessions — strengthens the core and sharpens mental focus.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Sun salutations & standing sequences</li>
+                                        <li>✅ Core & upper body strength</li>
+                                        <li>✅ Breath-movement synchronisation</li>
+                                        <li>✅ Mental focus & discipline</li>
+                                    </ul>
+                                    <a href="yoga.html#ashtanga-yoga" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-hatha">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/hatha_yoga.jpg" alt="Hatha">
+                                    </div>
+                                    <p class="acc-card-desc">Slower and more meditative than Ashtanga. Hatha brings balance to the body after intense kite sessions, working on flexibility and recovery.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Deep stretching & flexibility</li>
+                                        <li>✅ Joint mobility & recovery</li>
+                                        <li>✅ Balance & posture</li>
+                                        <li>✅ Relaxation techniques</li>
+                                    </ul>
+                                    <a href="yoga.html#hatha-yoga" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                            <div class="acc-card-panel" id="panel-pranayama">
+                                <div class="acc-card-body-inner">
+                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕ Close</button>
+                                    <div class="acc-card-gallery">
+                                        <img src="ressources/images/pranayama.jpg" alt="Pranayama">
+                                    </div>
+                                    <p class="acc-card-desc">Breath control and meditation techniques that directly improve performance on the water. Calm the nervous system, sharpen focus and manage fear.</p>
+                                    <ul class="acc-card-details">
+                                        <li>✅ Breathing techniques (Ujjayi, Nadi Shodhana)</li>
+                                        <li>✅ Guided meditation</li>
+                                        <li>✅ Stress & fear management</li>
+                                        <li>✅ Pre-session mental preparation</li>
+                                    </ul>
+                                    <a href="yoga.html#pranayama-yoga" class="btn-acc">Learn more →</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 — Testimonials -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)" role="button" aria-expanded="false" tabindex="0">
+                    <div class="accordion-title-group">
+                        <span class="accordion-number">04</span>
+                        <h2>Adventurers' Words</h2>
+                    </div>
+                    <span class="accordion-tagline">What our clients say</span>
+                    <div class="accordion-icon" aria-hidden="true">
+                        <svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12"/><line x1="0" y1="6" x2="12" y2="6"/></svg>
+                    </div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="acc-testimonials">
+                            <div class="acc-testimonial">
+                                <p>Parfait — un plaisir et un kite réglé à la perfection. Merciiiii</p>
+                                <cite>Catherine Lacroix</cite>
+                            </div>
+                            <div class="acc-testimonial">
+                                <p>I kite already multiple seasons, but upwind was always difficult. With good teaching, my position and upwind skills improved a lot!</p>
+                                <cite>Lennart Veringmeier</cite>
+                            </div>
+                            <div class="acc-testimonial">
+                                <p>Very professional course, focussed on what I wanted to perfect. Would certainly recommend this school for anyone looking to level up their riding.</p>
+                                <cite>Damien Desbuquoit</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 — Instagram -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)" role="button" aria-expanded="false" tabindex="0">
+                    <div class="accordion-title-group">
+                        <span class="accordion-number">05</span>
+                        <h2>Follow Our Adventures</h2>
+                    </div>
+                    <span class="accordion-tagline">@windprana</span>
+                    <div class="accordion-icon" aria-hidden="true">
+                        <svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12"/><line x1="0" y1="6" x2="12" y2="6"/></svg>
+                    </div>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="acc-instagram-grid">
+                            <a href="https://www.instagram.com/p/DLp3VFWI0CU/" target="_blank" rel="noopener">
+                                <img src="ressources/images/sunset.png" alt="Sunset" loading="lazy">
+                            </a>
+                            <a href="https://www.instagram.com/reel/DK961FkNeP5/" target="_blank" rel="noopener">
+                                <img src="ressources/images/whatwecrave.png" alt="Foiling" loading="lazy">
+                            </a>
+                            <a href="https://www.instagram.com/reel/DKXOeJGNJP-/" target="_blank" rel="noopener">
+                                <img src="ressources/images/boardoffshadow.png" alt="Board shadow" loading="lazy">
+                            </a>
+                            <a href="https://www.instagram.com/reel/DKNAeAqNLXq/" target="_blank" rel="noopener">
+                                <img src="ressources/images/latebackminiature.png" alt="Kiteloop" loading="lazy">
+                            </a>
+                            <a href="https://www.instagram.com/reel/DKr7gBqN-vy/" target="_blank" rel="noopener">
+                                <img src="ressources/images/mondayinmyface.png" alt="Monday crash" loading="lazy">
+                            </a>
+                            <a href="https://www.instagram.com/p/DKpLBsWte4K/" target="_blank" rel="noopener">
+                                <img src="ressources/images/yogaandkite.png" alt="Yoga and kite" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="acc-footer">
+                            <a href="https://www.instagram.com/windprana/" target="_blank" rel="noopener" class="btn-acc">Follow @windprana →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
     
         <!-- Newsletter / contact section -->
@@ -309,7 +513,7 @@
                 </div>
                 
                 <div class="footer-contact">
-                    <p class="contact-info">Email: <a href="mailto:info@windprana.com" class="contact-link">info@windprana.com</a></p>
+                    <p class="contact-info">Email: <a href="/cdn-cgi/l/email-protection#7c15121a133c0b1512180c0e1d121d521f1311" class="contact-link"><span class="__cf_email__" data-cfemail="93fafdf5fcd3e4fafdf7e3e1f2fdf2bdf0fcfe">[email&#160;protected]</span></a></p>
                     <p>What's app: +33769192769</p>
                 </div>
                 
@@ -320,8 +524,124 @@
             </div>
         </footer>
     
-        <!-- JS scripts to be added later -->
+        <!-- Hero Slider JS -->
         <script>
+            (function () {
+                const slides  = document.querySelectorAll('.hero-slide');
+                const bullets = document.querySelectorAll('.hero-bullet');
+                let current = 0;
+                let timer;
+
+                function goTo(index) {
+                    slides[current].classList.remove('active');
+                    bullets[current].classList.remove('active');
+                    bullets[current].setAttribute('aria-selected', 'false');
+
+                    current = (index + slides.length) % slides.length;
+
+                    slides[current].classList.add('active');
+                    bullets[current].classList.add('active');
+                    bullets[current].setAttribute('aria-selected', 'true');
+                }
+
+                function next() { goTo(current + 1); }
+
+                function startTimer() {
+                    clearInterval(timer);
+                    timer = setInterval(next, 5000);
+                }
+
+                // Bullet click — reset timer so it doesn't jump right after manual pick
+                bullets.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        goTo(parseInt(btn.dataset.index));
+                        startTimer();
+                    });
+                });
+
+                // Pause on hover for accessibility
+                const hero = document.querySelector('.hero');
+                hero.addEventListener('mouseenter', () => clearInterval(timer));
+                hero.addEventListener('mouseleave', startTimer);
+
+                startTimer();
+            })();
+        </script>
+
+        <!-- Accordion JS -->
+        <script>
+            function toggleAccordion(header) {
+                const body = header.nextElementSibling;
+                const isOpen = body.classList.contains('open');
+
+                // Close all open panels
+                document.querySelectorAll('.accordion-body.open').forEach(b => b.classList.remove('open'));
+                document.querySelectorAll('.accordion-header.active').forEach(h => {
+                    h.classList.remove('active');
+                    h.setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked one (if it was closed)
+                if (!isOpen) {
+                    body.classList.add('open');
+                    header.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            // Auto-open accordion panel if URL contains a matching hash
+            function openFromHash() {
+                const hash = window.location.hash;
+                if (!hash) return;
+                const target = document.querySelector(hash);
+                if (!target) return;
+                const header = target.querySelector('.accordion-header');
+                if (header) {
+                    toggleAccordion(header);
+                    // Small delay so the page has time to scroll first
+                    setTimeout(() => {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                    }, 550); // attend la fin de la transition de fermeture (0.5s)
+                }
+            }
+
+            window.addEventListener('load', openFromHash);
+            window.addEventListener('hashchange', openFromHash);
+
+            // Keyboard support
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleAccordion(header);
+                    }
+                });
+            });
+            
+        </script>
+
+        <!-- JS scripts for sub-added accordeon -->
+        <script>
+            function toggleCardAccordion(card, panelId) {
+                const wrapper = card.closest('.acc-grid-wrapper');
+                const panel = wrapper.querySelector('#panel-' + panelId);
+                const isOpen = panel.classList.contains('open');
+
+                // Ferme tous les panneaux de TOUTES les grilles
+                document.querySelectorAll('.acc-card-panel.open').forEach(p => p.classList.remove('open'));
+                document.querySelectorAll('.acc-card.open').forEach(c => c.classList.remove('open'));
+
+                if (!isOpen) {
+    panel.classList.add('open');
+    card.classList.add('open');
+                }
+            }
+        </script>
+
+        <!-- JS scripts to be added later -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
             // Get the mobile menu button and navigation elements
             const menuButton = document.querySelector('.menu-mobile');
             const nav = document.querySelector('nav');
@@ -337,10 +657,9 @@
         <script>
             (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
             .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-            ml('account', '1646659');
+            n=d.getElementsByTagName(e)[0],n.pa
+rentNode.insertBefore(l,n);})(window,document,'script','https://static.mailerlite.com/js/universal.js','ml');
+            ml('account', 'POLLQQ');
         </script>
-        <!-- End MailerLite Universal -->
     </body>
 </html>
