@@ -81,14 +81,8 @@
 
                 </div>
 
-                <!-- Bullet navigation -->
-                <div class="hero-bullets" role="tablist" aria-label="Hero navigation">
-                    <button class="hero-bullet active" data-index="0" role="tab" aria-selected="true" aria-label="Adventures"></button>
-                    <button class="hero-bullet" data-index="1" role="tab" aria-selected="false" aria-label="Kite Coaching"></button>
-                    <button class="hero-bullet" data-index="2" role="tab" aria-selected="false" aria-label="Yoga"></button>
-                    <button class="hero-bullet" data-index="3" role="tab" aria-selected="false" aria-label="Spots"></button>
-                    <button class="hero-bullet" data-index="4" role="tab" aria-selected="false" aria-label="Book Now"></button>
-                </div>
+                <button class="hero-arrow hero-arrow-prev" aria-label="Previous slide">&#8249;</button>
+                <button class="hero-arrow hero-arrow-next" aria-label="Next slide">&#8250;</button>
 
             </div>
         </section>
@@ -112,172 +106,309 @@
                     <div class="accordion-body-inner">
                         <p>Windprana leads to path and place where breathing comes from the forces of nature, diving in the wind and sheltering yourself in the elements. With us, you'll change and push your practice and vision.</p>
                         <div class="acc-grid-wrapper">
-                            <div class="acc-grid">
-
-                                <div class="acc-card" onclick="toggleCardAccordion(this, 'kenya')">
-                                    <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach Kenya" loading="lazy">
+                            <!-- ROW 1 -->
+                            <div class="acc-grid acc-grid-row" id="kite-row-1">
+                                <div class="acc-card" onclick="toggleRowCard(this, 'morocco', 'kite-panel-zone-1')">
+                                    <img src="ressources/images/selection-photo-dakhla/DJI_0109-1-scaled.jpg" alt="Dakhla Morocco" loading="lazy">
                                     <div class="acc-card-text">
-                                        <h3>Kashkazi Season</h3>
-                                        <p>Diani Beach — Kenya</p>
-                                        <p>21 Jan – 7 Feb 2026 · <strong>2 rooms left</strong></p>
+                                        <h3>Dakhla Morocco</h3>
+                                        <p>Where desert meets Ocean - progression coaching</p>
+                                        <p><strong>14–21 Apr</strong> (Available) · <strong>21–28 Apr </strong>(Full)</p>
                                         <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
-
-                                <div class="acc-card" onclick="toggleCardAccordion(this, 'morocco')">
-                                    <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla Morocco" loading="lazy">
-                                    <div class="acc-card-text">
-                                        <h3>Saharan Dream</h3>
-                                        <p>Desert meets Ocean — Morocco</p>
-                                        <p>14–21 Apr <strong>(Available)</strong> · 21–28 Apr <strong>(Full)</strong></p>
-                                        <span class="acc-card-toggle">Details ﹢</span>
-                                    </div>
-                                </div>
-
-                                <div class="acc-card" onclick="toggleCardAccordion(this, 'ireland')">
+                                <div class="acc-card" onclick="toggleRowCard(this, 'ireland', 'kite-panel-zone-1')">
                                     <img src="ressources/images/ireland.webp" alt="Ireland" loading="lazy">
                                     <div class="acc-card-text">
-                                        <h3>Wild Atlantic</h3>
-                                        <p>Irish stormy coastline</p>
+                                        <h3>Ireland</h3>
+                                        <p>The Wild Atlantic stormy coastline</p>
                                         <p><strong>Dates coming soon</strong></p>
                                         <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
-
-                            </div>
-
-                            <div class="acc-card-panel" id="panel-kenya">
-                                <div class="gallery-panel">
-                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕</button>
-                                    <button class="gallery-prev">‹</button>
-                                    <button class="gallery-next">›</button>
-
-                                    <div class="gallery-slide active">
-                                        <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach">
-                                        <div class="gallery-info">
-                                            <h3>Kashkazi Season — Kenya</h3>
-                                            <p>📅 21 Jan – 7 Feb 2026 &nbsp;·&nbsp; 🛏 2 rooms left</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach 2">
-                                        <div class="gallery-info">
-                                            <h3>What's included</h3>
-                                            <ul>
-                                                <li>✅ Accommodation on site</li>
-                                                <li>✅ Daily kite & yoga sessions</li>
-                                                <li>✅ Airport transfers</li>
-                                            </ul>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach 3">
-                                        <div class="gallery-info">
-                                            <h3>Price</h3>
-                                            <p>💰 From €XXX / person</p>
-                                            <p>Includes full board, coaching & equipment</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="gallery-bullets">
-                                        <button class="gallery-bullet active"></button>
-                                        <button class="gallery-bullet"></button>
-                                        <button class="gallery-bullet"></button>
+                                <div class="acc-card" onclick="toggleRowCard(this, 'kenya', 'kite-panel-zone-1')">
+                                    <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach Kenya" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Kenya</h3>
+                                        <p>Beginner trip to Diani Beach</p>
+                                        <p>January 2027 · <strong>available</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="acc-card-panel" id="panel-morocco">
-                                <div class="gallery-panel">
-                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕</button>
-                                    <button class="gallery-prev">‹</button>
-                                    <button class="gallery-next">›</button>
-
-                                    <div class="gallery-slide active">
-                                        <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla">
-                                        <div class="gallery-info">
-                                            <h3>Saharan Dream — Morocco</h3>
-                                            <p>📅 14–21 Apr (Available) &nbsp;·&nbsp; 21–28 Apr (Full)</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                            <!-- PANEL ZONE ROW 1 — pushes row 2 down -->
+                            <div class="acc-row-panel-zone" id="kite-panel-zone-1">
+                                <div class="acc-card-panel" id="panel-morocco">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/selection-photo-dakhla/DJI_0109-1-scaled.jpg" alt="Dakhla">
+                                            <div class="gallery-info">
+                                                <h3>Saharan Dream — Morocco</h3>
+                                                <p>📅 14–21 Apr (Available) &nbsp;·&nbsp; 21–28 Apr (Full)</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/selection-photo-dakhla/voiture_desert.jpg" alt="Dakhla 2">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul>
+                                                    <li>✅ Dakhla Evasion KiteCamp</li>
+                                                    <li>✅ All meals included</li>
+                                                    <li>✅ Kite coaching and video analysis</li>
+                                                    <li>✅ Yoga</li>
+                                                </ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/selection-photo-dakhla/speedspot-boardoff.jpeg" alt="Dakhla 3">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 From €XXX / person</p>
+                                                <p>Includes full board, coaching and yoga</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
                                         </div>
                                     </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla 2">
-                                        <div class="gallery-info">
-                                            <h3>What's included</h3>
-                                            <ul>
-                                                <li>✅ Desert camp accommodation</li>
-                                                <li>✅ Kite sessions on the lagoon</li>
-                                                <li>✅ Yoga at sunrise on the dunes</li>
-                                            </ul>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                </div>
+                                <div class="acc-card-panel" id="panel-ireland">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/ireland.webp" alt="Ireland">
+                                            <div class="gallery-info">
+                                                <h3>Wild Atlantic — Ireland</h3>
+                                                <p>📅 Dates coming soon</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/ireland.webp" alt="Ireland 2">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul>
+                                                    <li>✅ Atlantic coast accommodation</li>
+                                                    <li>✅ Storm chasing kite sessions</li>
+                                                    <li>✅ Wild landscape yoga</li>
+                                                </ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/ireland.webp" alt="Ireland 3">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 TBA</p>
+                                                <p>Open for early interest registration</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
                                         </div>
                                     </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/dune-blanche-dakhla.jpeg" alt="Dakhla 3">
-                                        <div class="gallery-info">
-                                            <h3>Price</h3>
-                                            <p>💰 From €XXX / person</p>
-                                            <p>Includes full board, coaching & equipment</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                </div>
+                                <div class="acc-card-panel" id="panel-kenya">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/selectionkenya/diani-beach-kenya.webp" alt="Diani Beach">
+                                            <div class="gallery-info">
+                                                <h3>Kenya - Diani Beach</h3>
+                                                <p>📅 January 2027 &nbsp;·&nbsp; 🛏 available</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="gallery-bullets">
-                                        <button class="gallery-bullet active"></button>
-                                        <button class="gallery-bullet"></button>
-                                        <button class="gallery-bullet"></button>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/selectionkenya/diani-vueduciel-background.webp" alt="Diani Beach 2">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul>
+                                                    <li>✅ Accommodation in a private villa</li>
+                                                    <li>✅ Coaching Kite & video analysis</li>
+                                                    <li>✅ Yoga classes daily</li>
+                                                    <li>✅ All meals included</li>
+                                                    <li>✅ Airport transfers</li>
+                                                </ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/selectionkenya/villa-vue-de-face.webp" alt="Diani Beach 3">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 From €XXX / person</p>
+                                                <p>Includes full board, kite coaching & yoga</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="acc-card-panel" id="panel-ireland">
-                                <div class="gallery-panel">
-                                    <button class="acc-panel-close" onclick="closeCardPanel(this)">✕</button>
-                                    <button class="gallery-prev">‹</button>
-                                    <button class="gallery-next">›</button>
-
-                                    <div class="gallery-slide active">
-                                        <img src="ressources/images/ireland.webp" alt="Ireland">
-                                        <div class="gallery-info">
-                                            <h3>Wild Atlantic — Ireland</h3>
-                                            <p>📅 Dates coming soon</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
-                                        </div>
+                            <!-- ROW 2 -->
+                            <div class="acc-grid acc-grid-row" id="kite-row-2">
+                                <div class="acc-card" onclick="toggleRowCard(this, 'dest4', 'kite-panel-zone-2')">
+                                    <img src="ressources/images/placeholder.jpg" alt="Destination 4" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Destination TBA</h3>
+                                        <p>A new adventure on the horizon</p>
+                                        <p><strong>Dates coming soon</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/ireland.webp" alt="Ireland 2">
-                                        <div class="gallery-info">
-                                            <h3>What's included</h3>
-                                            <ul>
-                                                <li>✅ Atlantic coast accommodation</li>
-                                                <li>✅ Storm chasing kite sessions</li>
-                                                <li>✅ Wild landscape yoga</li>
-                                            </ul>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
-                                        </div>
+                                </div>
+                                <div class="acc-card" onclick="toggleRowCard(this, 'dest5', 'kite-panel-zone-2')">
+                                    <img src="ressources/images/placeholder.jpg" alt="Destination 5" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Destination TBA</h3>
+                                        <p>A new adventure on the horizon</p>
+                                        <p><strong>Dates coming soon</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
-                                    <div class="gallery-slide">
-                                        <img src="ressources/images/ireland.webp" alt="Ireland 3">
-                                        <div class="gallery-info">
-                                            <h3>Price</h3>
-                                            <p>💰 TBA</p>
-                                            <p>Open for early interest registration</p>
-                                            <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="gallery-bullets">
-                                        <button class="gallery-bullet active"></button>
-                                        <button class="gallery-bullet"></button>
-                                        <button class="gallery-bullet"></button>
+                                </div>
+                                <div class="acc-card" onclick="toggleRowCard(this, 'dest6', 'kite-panel-zone-2')">
+                                    <img src="ressources/images/placeholder.jpg" alt="Destination 6" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Destination TBA</h3>
+                                        <p>A new adventure on the horizon</p>
+                                        <p><strong>Dates coming soon</strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- PANEL ZONE ROW 2 -->
+                            <div class="acc-row-panel-zone" id="kite-panel-zone-2">
+                                <div class="acc-card-panel" id="panel-dest4">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-2')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <div class="gallery-info">
+                                                <h3>Destination TBA</h3>
+                                                <p>📅 Dates coming soon</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul><li>✅ TBA</li><li>✅ TBA</li><li>✅ TBA</li></ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 TBA</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acc-card-panel" id="panel-dest5">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-2')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 5">
+                                            <div class="gallery-info">
+                                                <h3>Destination TBA</h3>
+                                                <p>📅 Dates coming soon</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 5">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul><li>✅ TBA</li><li>✅ TBA</li><li>✅ TBA</li></ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 5">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 TBA</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acc-card-panel" id="panel-dest6">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-2')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 6">
+                                            <div class="gallery-info">
+                                                <h3>Destination TBA</h3>
+                                                <p>📅 Dates coming soon</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 6">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul><li>✅ TBA</li><li>✅ TBA</li><li>✅ TBA</li></ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Destination 6">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 TBA</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -764,38 +895,28 @@
         <script>
             (function () {
                 const slides  = document.querySelectorAll('.hero-slide');
-                const bullets = document.querySelectorAll('.hero-bullet');
+                const prevBtn = document.querySelector('.hero-arrow-prev');
+                const nextBtn = document.querySelector('.hero-arrow-next');
                 let current = 0;
                 let timer;
 
                 function goTo(index) {
                     slides[current].classList.remove('active');
-                    bullets[current].classList.remove('active');
-                    bullets[current].setAttribute('aria-selected', 'false');
-
                     current = (index + slides.length) % slides.length;
-
                     slides[current].classList.add('active');
-                    bullets[current].classList.add('active');
-                    bullets[current].setAttribute('aria-selected', 'true');
                 }
 
                 function next() { goTo(current + 1); }
+                function prev() { goTo(current - 1); }
 
                 function startTimer() {
                     clearInterval(timer);
                     timer = setInterval(next, 5000);
                 }
 
-                // Bullet click — reset timer so it doesn't jump right after manual pick
-                bullets.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        goTo(parseInt(btn.dataset.index));
-                        startTimer();
-                    });
-                });
+                prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+                nextBtn.addEventListener('click', () => { next(); startTimer(); });
 
-                // Pause on hover for accessibility
                 const hero = document.querySelector('.hero');
                 hero.addEventListener('mouseenter', () => clearInterval(timer));
                 hero.addEventListener('mouseleave', startTimer);
@@ -807,23 +928,14 @@
         <!-- Accordion JS -->
         <script>
             function toggleAccordion(header) {
-                const body = header.nextElementSibling;
-                const isOpen = body.classList.contains('open');
+                    const body = header.nextElementSibling;
+                    const isOpen = body.classList.contains('open');
 
-                // Close all open panels
-                document.querySelectorAll('.accordion-body.open').forEach(b => b.classList.remove('open'));
-                document.querySelectorAll('.accordion-header.active').forEach(h => {
-                    h.classList.remove('active');
-                    h.setAttribute('aria-expanded', 'false');
-                });
-
-                // Open clicked one (if it was closed)
-                if (!isOpen) {
-                    body.classList.add('open');
-                    header.classList.add('active');
-                    header.setAttribute('aria-expanded', 'true');
+                    // Toggle only the clicked one
+                    body.classList.toggle('open', !isOpen);
+                    header.classList.toggle('active', !isOpen);
+                    header.setAttribute('aria-expanded', String(!isOpen));
                 }
-            }
 
             // Auto-open accordion panel if URL contains a matching hash
             function openFromHash() {
@@ -833,13 +945,16 @@
                 if (!target) return;
                 const header = target.querySelector('.accordion-header');
                 if (header) {
-                    toggleAccordion(header);
-                    // Small delay so the page has time to scroll first
+                    const body = header.nextElementSibling;
+                    // Ouvre seulement si pas déjà ouvert
+                    if (!body.classList.contains('open')) {
+                        toggleAccordion(header);
+                    }
                     setTimeout(() => {
                         const headerHeight = document.querySelector('header').offsetHeight;
                         const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
                         window.scrollTo({ top: targetTop, behavior: 'smooth' });
-                    }, 550); // attend la fin de la transition de fermeture (0.5s)
+                    }, 550);
                 }
             }
 
@@ -860,19 +975,51 @@
 
         <!-- JS scripts for sub-added accordeon -->
         <script>
+            function toggleRowCard(card, panelId, zoneId) {
+                const zone = document.getElementById(zoneId);
+                const panel = zone.querySelector('#panel-' + panelId);
+                const isOpen = panel.classList.contains('open');
+
+                // Close all panels in this zone
+                zone.querySelectorAll('.acc-card-panel').forEach(p => p.classList.remove('open'));
+                // Deselect all cards in this row
+                card.closest('.acc-grid-row').querySelectorAll('.acc-card').forEach(c => c.classList.remove('open'));
+
+                if (isOpen) {
+                    zone.classList.remove('open');
+                } else {
+                    panel.classList.add('open');
+                    card.classList.add('open');
+                    zone.classList.add('open');
+                    initGallery(panel);
+                }
+            }
+
+            function closeRowZone(zoneId) {
+                const zone = document.getElementById(zoneId);
+                zone.querySelectorAll('.acc-card-panel').forEach(p => p.classList.remove('open'));
+                zone.classList.remove('open');
+                document.querySelectorAll('.acc-card.open').forEach(c => c.classList.remove('open'));
+            }
+
+            // Legacy for coaching + yoga sections (unchanged)
             function toggleCardAccordion(card, panelId) {
                 const wrapper = card.closest('.acc-grid-wrapper');
                 const panel = wrapper.querySelector('#panel-' + panelId);
                 const isOpen = panel.classList.contains('open');
-
                 document.querySelectorAll('.acc-card-panel.open').forEach(p => p.classList.remove('open'));
                 document.querySelectorAll('.acc-card.open').forEach(c => c.classList.remove('open'));
-
                 if (!isOpen) {
                     panel.classList.add('open');
                     card.classList.add('open');
                     initGallery(panel);
                 }
+            }
+
+            function closeCardPanel(btn) {
+                const panel = btn.closest('.acc-card-panel');
+                panel.classList.remove('open');
+                document.querySelectorAll('.acc-card.open').forEach(c => c.classList.remove('open'));
             }
 
             function initGallery(panel) {
@@ -892,7 +1039,6 @@
                 panel.querySelector('.gallery-next').onclick = (e) => { e.stopPropagation(); goTo(current + 1); };
                 bullets.forEach((b, i) => b.onclick = (e) => { e.stopPropagation(); goTo(i); });
 
-                // Reset to first slide on open
                 slides.forEach(s => s.classList.remove('active'));
                 bullets.forEach(b => b.classList.remove('active'));
                 slides[0].classList.add('active');
