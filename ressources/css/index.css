@@ -777,6 +777,10 @@ nav ul li a:hover::after {
     display: block;
 }
 
+.brasil3 {
+    object-position: bottom
+}
+
 /* Info overlay */
 .gallery-info {
     position: absolute;
