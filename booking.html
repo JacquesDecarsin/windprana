@@ -566,7 +566,9 @@
                 .then(function(response) {
                     if (response.ok) {
                         document.getElementById('booking-section').style.display = 'none';
-                        document.getElementById('wp-success').style.display = 'block';
+                        var successEl = document.getElementById('wp-success');
+                        successEl.style.display = 'block';
+                        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else {
                         document.getElementById('wp-error-msg').textContent = 'Error sending request. Please try again or contact us directly.';
                         document.getElementById('wp-error-msg').style.display = 'block';
