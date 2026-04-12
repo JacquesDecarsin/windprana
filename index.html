@@ -113,7 +113,16 @@
                                     <div class="acc-card-text">
                                         <h3>Dakhla Morocco</h3>
                                         <p>Where desert meets Ocean - progression coaching</p>
-                                        <p><strong>14–21 Apr</strong> (Available) · <strong>21–28 Apr </strong>(Full)</p>
+                                        <p><strong>14–21 Apr</strong> (Available) · <strong>28 Apr - 5 May </strong></p>
+                                        <span class="acc-card-toggle">Details ﹢</span>
+                                    </div>
+                                </div>
+                                <div class="acc-card" onclick="toggleRowCard(this, 'dest4', 'kite-panel-zone-1')">
+                                    <img src="ressources/images/placeholder.jpg" alt="Dahab Blue Lagoon" loading="lazy">
+                                    <div class="acc-card-text">
+                                        <h3>Dahab · Blue Lagoon</h3>
+                                        <p>Entre kite et plongée sur la côte de la Mer Rouge</p>
+                                        <p>19 sept – 3 oct · <strong>available</strong></p>
                                         <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
@@ -135,15 +144,6 @@
                                         <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>-->
-                                <div class="acc-card" onclick="toggleRowCard(this, 'kenya', 'kite-panel-zone-1')">
-                                    <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach Kenya" loading="lazy">
-                                    <div class="acc-card-text">
-                                        <h3>Kenya</h3>
-                                        <p>Beginner trip to Diani Beach</p>
-                                        <p>January 2027 · <strong>available</strong></p>
-                                        <span class="acc-card-toggle">Details ﹢</span>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- PANEL ZONE ROW 1 — pushes row 2 down -->
@@ -166,10 +166,9 @@
                                             <div class="gallery-info">
                                                 <h3>What's included</h3>
                                                 <ul>
-                                                    <li>✅ Dakhla Evasion KiteCamp</li>
-                                                    <li>✅ All meals included</li>
-                                                    <li>✅ Kite coaching and video analysis</li>
-                                                    <li>✅ Yoga</li>
+                                                    <li>✅ Radio - Video analysis and debriefing</li>
+                                                    <li>✅ Targeted exercise focusing on kite control and body movement </li>
+                                                    <li>✅ Flexible hours coaching on daily basis (starting from 2h)</li>
                                                 </ul>
                                                 <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
                                             </div>
@@ -178,8 +177,8 @@
                                             <img src="ressources/images/selection-photo-dakhla/speedspot-boardoff.jpeg" alt="Dakhla 3">
                                             <div class="gallery-info">
                                                 <h3>Price</h3>
-                                                <p>💰 From €XXX / person</p>
-                                                <p>Includes full board, coaching and yoga</p>
+                                                <p>💰 From €171 / person for 2 hours</p>
+                                                <p>discounted rates available for every session</p>
                                                 <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
                                             </div>
                                         </div>
@@ -248,6 +247,47 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="acc-card-panel" id="panel-dest4">
+                                    <div class="gallery-panel">
+                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
+                                        <button class="gallery-prev">‹</button>
+                                        <button class="gallery-next">›</button>
+                                        <div class="gallery-slide active">
+                                            <img src="ressources/images/placeholder.jpg" alt="Dahab Blue Lagoon">
+                                            <div class="gallery-info">
+                                                <h3>Dahab · Blue Lagoon</h3>
+                                                <p>📅 19 sept – 3 oct · Kitesurf et plongée sur la Mer Rouge</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Dahab Blue Lagoon">
+                                            <div class="gallery-info">
+                                                <h3>What's included</h3>
+                                                <ul>
+                                                    <li>✅ Hébergement au bord de l'eau</li>
+                                                    <li>✅ Sessions kite et sorties plongée</li>
+                                                    <li>✅ Transferts et équipement</li>
+                                                </ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-slide">
+                                            <img src="ressources/images/placeholder.jpg" alt="Dahab Blue Lagoon">
+                                            <div class="gallery-info">
+                                                <h3>Price</h3>
+                                                <p>💰 Sur demande</p>
+                                                <p>Départ 19 sept – Retour 3 oct</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bullets">
+                                            <button class="gallery-bullet active"></button>
+                                            <button class="gallery-bullet"></button>
+                                            <button class="gallery-bullet"></button>
+                                        </div>
+                                    </div>
+                                </div>
                             <!--<div class="acc-card-panel" id="panel-ireland">
                                     <div class="gallery-panel">
                                         <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
@@ -289,59 +329,16 @@
                                         </div>
                                     </div>
                                 </div>-->
-                                <div class="acc-card-panel" id="panel-kenya">
-                                    <div class="gallery-panel">
-                                        <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-1')">✕</button>
-                                        <button class="gallery-prev">‹</button>
-                                        <button class="gallery-next">›</button>
-                                        <div class="gallery-slide active">
-                                            <img src="ressources/images/selectionkenya/diani-beach-kenya.webp" alt="Diani Beach">
-                                            <div class="gallery-info">
-                                                <h3>Kenya - Diani Beach</h3>
-                                                <p>📅 January 2027 &nbsp;·&nbsp; 🛏 available</p>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-slide">
-                                            <img src="ressources/images/selectionkenya/diani-vueduciel-background.webp" alt="Diani Beach 2">
-                                            <div class="gallery-info">
-                                                <h3>What's included</h3>
-                                                <ul>
-                                                    <li>✅ Accommodation in a private villa</li>
-                                                    <li>✅ Coaching Kite & video analysis</li>
-                                                    <li>✅ Yoga classes daily</li>
-                                                    <li>✅ All meals included</li>
-                                                    <li>✅ Airport transfers</li>
-                                                </ul>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-slide">
-                                            <img src="ressources/images/selectionkenya/villa-vue-de-face.webp" alt="Diani Beach 3">
-                                            <div class="gallery-info">
-                                                <h3>Price</h3>
-                                                <p>💰 From €XXX / person</p>
-                                                <p>Includes full board, kite coaching & yoga</p>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bullets">
-                                            <button class="gallery-bullet active"></button>
-                                            <button class="gallery-bullet"></button>
-                                            <button class="gallery-bullet"></button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- ROW 2 -->
                             <div class="acc-grid acc-grid-row" id="kite-row-2">
-                                <div class="acc-card" onclick="toggleRowCard(this, 'dest4', 'kite-panel-zone-2')">
-                                    <img src="ressources/images/placeholder.jpg" alt="Destination 4" loading="lazy">
+                                <div class="acc-card" onclick="toggleRowCard(this, 'kenya', 'kite-panel-zone-2')">
+                                    <img src="ressources/images/diani_kenya.jpg" alt="Diani Beach Kenya" loading="lazy">
                                     <div class="acc-card-text">
-                                        <h3>Destination TBA</h3>
-                                        <p>A new adventure on the horizon</p>
-                                        <p><strong>Dates coming soon</strong></p>
+                                        <h3>Kenya</h3>
+                                        <p>Beginner trip to Diani Beach</p>
+                                        <p>January 2027 · <strong>available</strong></p>
                                         <span class="acc-card-toggle">Details ﹢</span>
                                     </div>
                                 </div>
@@ -367,33 +364,40 @@
 
                             <!-- PANEL ZONE ROW 2 -->
                             <div class="acc-row-panel-zone" id="kite-panel-zone-2">
-                                <div class="acc-card-panel" id="panel-dest4">
+                                <div class="acc-card-panel" id="panel-kenya">
                                     <div class="gallery-panel">
                                         <button class="acc-panel-close" onclick="closeRowZone('kite-panel-zone-2')">✕</button>
                                         <button class="gallery-prev">‹</button>
                                         <button class="gallery-next">›</button>
                                         <div class="gallery-slide active">
-                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <img src="ressources/images/selectionkenya/diani-beach-kenya.webp" alt="Diani Beach">
                                             <div class="gallery-info">
-                                                <h3>Destination TBA</h3>
-                                                <p>📅 Dates coming soon</p>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                                <h3>Kenya - Diani Beach</h3>
+                                                <p>📅 January 2027 · 🛏 available</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
                                             </div>
                                         </div>
                                         <div class="gallery-slide">
-                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <img src="ressources/images/selectionkenya/diani-vueduciel-background.webp" alt="Diani Beach 2">
                                             <div class="gallery-info">
                                                 <h3>What's included</h3>
-                                                <ul><li>✅ TBA</li><li>✅ TBA</li><li>✅ TBA</li></ul>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                                <ul>
+                                                    <li>✅ Accommodation in a private villa</li>
+                                                    <li>✅ Coaching Kite & video analysis</li>
+                                                    <li>✅ Yoga classes daily</li>
+                                                    <li>✅ All meals included</li>
+                                                    <li>✅ Airport transfers</li>
+                                                </ul>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
                                             </div>
                                         </div>
                                         <div class="gallery-slide">
-                                            <img src="ressources/images/placeholder.jpg" alt="Destination 4">
+                                            <img src="ressources/images/selectionkenya/villa-vue-de-face.webp" alt="Diani Beach 3">
                                             <div class="gallery-info">
                                                 <h3>Price</h3>
-                                                <p>💰 TBA</p>
-                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Register interest →</a>
+                                                <p>💰 From €XXX / person</p>
+                                                <p>Includes full board, kite coaching & yoga</p>
+                                                <a href="booking.html" class="btn-acc" onclick="event.stopPropagation()">Book now →</a>
                                             </div>
                                         </div>
                                         <div class="gallery-bullets">

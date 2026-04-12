@@ -85,11 +85,12 @@
                     <div class="wp-dest-title">Dakhla Morocco</div>
                     <div class="wp-dest-subtitle">14–21 Apr · 28 Apr-5 May 2026</div>
                     <div class="wp-row">
-                    <label class="wp-row-label" for="wp-maroc-session">Session</label>
-                    <select id="wp-maroc-session" onchange="wpRecalc()">
-                        <option>14–21 Apr 2026</option>
-                        <option>28 Apr-5 May 2026</option>
-                    </select>
+                    <label class="wp-row-label" for="wp-maroc-session-start">Session</label>
+                    <div class="wp-date-range">
+                        <input type="date" id="wp-maroc-session-start" onchange="wpUpdateEndDate('maroc'); wpRecalc()" min="2026-04-14" max="2026-05-05" placeholder="Start date">
+                        <span class="wp-date-separator">to</span>
+                        <input type="date" id="wp-maroc-session-end" onchange="wpValidateDateRange('maroc'); wpRecalc()" min="2026-04-14" max="2026-05-05" placeholder="End date">
+                    </div>
                     </div>
                     <div class="wp-row">
                     <label class="wp-row-label" for="wp-maroc-coaching">Advanced Private Coaching</label>
@@ -121,7 +122,7 @@
                     </select>
                     </div>
                     <div class="wp-subtotal-row">
-                    <span>Subtotal / person</span>
+                    <span>Subtotal / person (accommodation not included)</span>
                     <strong id="wp-sub-maroc">—</strong>
                     </div>
                 </div>
@@ -129,33 +130,46 @@
                 <!-- ── BRASIL ── -->
                 <div class="wp-dest-body" id="wp-body-brasil">
                     <div class="wp-dest-title">Brasil</div>
-                    <div class="wp-dest-subtitle">Macapá &amp; Nordeste · October 2026</div>
+                    <div class="wp-dest-subtitle">Macapá, Barra Grande, Guriu, Patos, Arpoador · October-November 2026</div>
                     <div class="wp-row">
-                    <label class="wp-row-label" for="wp-brasil-coaching">Coaching</label>
+                    <label class="wp-row-label" for="wp-brasil-session-start">Session (from - to)</label>
+                    <div class="wp-date-range">
+                        <input type="date" id="wp-brasil-session-start" onchange="wpUpdateEndDate('brasil'); wpRecalc()" min="2026-10-01" max="2026-11-30" placeholder="Start date">
+                        <span class="wp-date-separator">to</span>
+                        <input type="date" id="wp-brasil-session-end" onchange="wpRecalc()" min="2026-10-01" max="2026-11-30" placeholder="End date">
+                    </div>
+                    </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-brasil-coaching">Advanced Private Coaching</label>
                     <select id="wp-brasil-coaching" onchange="wpRecalc()">
-                        <option value="140">4 h — €140 / person</option>
-                        <option value="210">6 h — €210 / person</option>
-                        <option value="280">8 h — €280 / person</option>
-                        <option value="350">10 h — €350 / person</option>
-                        <option value="420">12 h — €420 / person</option>
-                        <option value="490">14 h — €490 / person</option>
-                        <option value="560">16 h — €560 / person</option>
+                        <option value="171">2 h — €171 / person</option>
+                        <option value="324">4 h — €324 / person</option>
+                        <option value="459">6 h — €459 / person</option>
+                        <option value="576">8 h — €576 / person</option>
+                        <option value="675">10 h — €675 / person</option>
                     </select>
                     </div>
                     <div class="wp-row">
-                    <label class="wp-row-label" for="wp-brasil-lodging">Accommodation</label>
+                    <label class="wp-row-label" for="wp-brasil-lodging">Accommodation with our partner</label>
                     <select id="wp-brasil-lodging" onchange="wpRecalc()">
-                        <option value="520">Shared pousada — €520 / person</option>
-                        <option value="720">Double pousada — €720 / person</option>
-                        <option value="980">Single pousada — €980 / person</option>
+                        <option value="0">Send me details of partners options</option>
+                        <option value="0">I take care of accommodation independently</option>
                     </select>
                     </div>
-                    <div class="wp-included">
-                    <span class="wp-pill">Yoga included</span>
-                    <span class="wp-included-text">Morning sessions included</span>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-brasil-yoga">Yoga</label>
+                    <select id="wp-brasil-yoga" onchange="wpRecalc()">
+                        <option value="0">No yoga</option>
+                        <option value="25">1h €25 / person</option>
+                        <option value="45">2h €45 / person</option>
+                        <option value="60">3h €60 / person</option>
+                        <option value="75">4h €75 / person</option>
+                        <option value="90">5h 90€ / person</option>
+                        <option value="100">6h €100 / person</option>
+                    </select>
                     </div>
                     <div class="wp-subtotal-row">
-                    <span>Subtotal / person</span>
+                    <span>Subtotal / person (accommodation not included)</span>
                     <strong id="wp-sub-brasil">—</strong>
                     </div>
                 </div>
@@ -165,31 +179,43 @@
                     <div class="wp-dest-title">Kenya — Diani Beach</div>
                     <div class="wp-dest-subtitle">January 2027</div>
                     <div class="wp-row">
-                    <label class="wp-row-label" for="wp-kenya-coaching">Coaching</label>
-                    <select id="wp-kenya-coaching" onchange="wpRecalc()">
-                        <option value="140">4 h — €140 / person</option>
-                        <option value="210">6 h — €210 / person</option>
-                        <option value="280">8 h — €280 / person</option>
-                        <option value="350">10 h — €350 / person</option>
-                        <option value="420">12 h — €420 / person</option>
-                        <option value="490">14 h — €490 / person</option>
-                        <option value="560">16 h — €560 / person</option>
+                    <label class="wp-row-label" for="wp-kenya-session">Session</label>
+                    <select id="wp-kenya-session" onchange="wpRecalc()">
+                        <option>16/01/2027 - 23/01/2027</option>
+                        <option>23/01/2027 - 30/01/2027</option>
                     </select>
                     </div>
                     <div class="wp-row">
-                    <label class="wp-row-label" for="wp-kenya-lodging">Accommodation</label>
-                    <select id="wp-kenya-lodging" onchange="wpRecalc()">
-                        <option value="690">Kashkazi — shared — €690 / person</option>
-                        <option value="890">Kashkazi — double — €890 / person</option>
-                        <option value="1190">Kashkazi — single — €1,190 / person</option>
+                    <label class="wp-row-label" for="wp-kenya-coaching">Advanced Private Coaching</label>
+                    <select id="wp-kenya-coaching" onchange="wpRecalc()">
+                        <option value="171">2 h — €171 / person</option>
+                        <option value="324">4 h — €324 / person</option>
+                        <option value="459">6 h — €459 / person</option>
+                        <option value="576">8 h — €576 / person</option>
+                        <option value="675">10 h — €675 / person</option>
                     </select>
                     </div>
-                    <div class="wp-included">
-                    <span class="wp-pill">Yoga included</span>
-                    <span class="wp-included-text">Morning sessions included</span>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-kenya-lodging">Accommodation with our partner</label>
+                    <select id="wp-kenya-lodging" onchange="wpRecalc()">
+                        <option value="0">Send me details of partners options</option>
+                        <option value="0">I take care of accommodation independently</option>
+                    </select>
+                    </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-kenya-yoga">Yoga</label>
+                    <select id="wp-kenya-yoga" onchange="wpRecalc()">
+                        <option value="0">No yoga</option>
+                        <option value="25">1h €25 / person</option>
+                        <option value="45">2h €45 / person</option>
+                        <option value="60">3h €60 / person</option>
+                        <option value="75">4h €75 / person</option>
+                        <option value="90">5h 90€ / person</option>
+                        <option value="100">6h €100 / person</option>
+                    </select>
                     </div>
                     <div class="wp-subtotal-row">
-                    <span>Subtotal / person</span>
+                    <span>Subtotal / person (accommodation not included)</span>
                     <strong id="wp-sub-kenya">—</strong>
                     </div>
                 </div>
@@ -217,7 +243,7 @@
                     </div>
                     <div class="form-group">
                     <label for="wp-message">Message or questions</label>
-                    <textarea id="wp-message" rows="3" placeholder="Equipment questions, dietary needs, anything you'd like us to know…"></textarea>
+                    <textarea id="wp-message" rows="3" placeholder="Rooms inquiry (private, shared, AC/ventilator), gear recommended, level and goals targeted during the coaching..."></textarea>
                     </div>
                     <div id="wp-error-msg" class="wp-error" style="display:none;">
                     Please fill in your first name, last name and email.
@@ -237,7 +263,7 @@
                     <span id="wp-f-total">€—</span>
                     </div>
                     <div class="wp-f-deposit">
-                    <span>30% deposit to secure your spot</span>
+                    <span>30% deposit to secure your spot will be required too confirm your booking (not now)</span>
                     <span id="wp-f-deposit">€—</span>
                     </div>
                     <button class="wp-cta" id="wp-cta" onclick="wpSubmit()">Send my request →</button>
@@ -388,6 +414,73 @@
                 return '€' + n.toLocaleString('fr-FR');
             }
 
+            function wpUpdateEndDate(dest) {
+                var startEl = document.getElementById('wp-' + dest + '-session-start');
+                var endEl = document.getElementById('wp-' + dest + '-session-end');
+                if (!startEl || !endEl || !startEl.value) return;
+
+                var ranges = {
+                    maroc: [
+                        { start: '2026-04-14', end: '2026-04-21' },
+                        { start: '2026-04-28', end: '2026-05-05' }
+                    ],
+                    brasil: [
+                        { start: '2026-10-01', end: '2026-11-30' }
+                    ]
+                };
+
+                var selected = startEl.value;
+                var range = ranges[dest].find(function(r) {
+                    return selected >= r.start && selected <= r.end;
+                });
+
+                if (!range) {
+                    alert('Please choose a start date within the available Maroc sessions: 14–21 April or 28 April–5 May 2026.');
+                    startEl.value = '';
+                    endEl.value = '';
+                    return;
+                }
+
+                endEl.min = selected;
+                endEl.max = range.end;
+                if (!endEl.value || endEl.value < selected || endEl.value > range.end) {
+                    var startDate = new Date(startEl.value);
+                    startDate.setDate(startDate.getDate() + 7);
+                    var endDateStr = startDate.toISOString().split('T')[0];
+                    if (endDateStr > range.end) {
+                        endDateStr = range.end;
+                    }
+                    endEl.value = endDateStr;
+                }
+            }
+
+            function wpValidateDateRange(dest) {
+                var startEl = document.getElementById('wp-' + dest + '-session-start');
+                var endEl = document.getElementById('wp-' + dest + '-session-end');
+                if (!startEl || !endEl || !startEl.value || !endEl.value) return;
+
+                var ranges = {
+                    maroc: [
+                        { start: '2026-04-14', end: '2026-04-21' },
+                        { start: '2026-04-28', end: '2026-05-05' }
+                    ],
+                    brasil: [
+                        { start: '2026-10-01', end: '2026-11-30' }
+                    ]
+                };
+
+                var start = startEl.value;
+                var end = endEl.value;
+                var range = ranges[dest].find(function(r) {
+                    return start >= r.start && start <= r.end;
+                });
+
+                if (!range || end < start || end > range.end) {
+                    alert('Please select an end date within the same available session period.');
+                    endEl.value = '';
+                }
+            }
+
             function wpRecalc() {
                 if (!wpCurrent) return;
                 var coaching = wpGetVal('wp-' + wpCurrent + '-coaching');
@@ -427,10 +520,18 @@
                 var lodgeText = lodgeSel ? lodgeSel.options[lodgeSel.selectedIndex].text : '';
                 var yogaText  = yogaSel ? yogaSel.options[yogaSel.selectedIndex].text : '';
 
-                var sessionEl   = document.getElementById('wp-maroc-session');
-                var sessionLine = (wpCurrent === 'maroc' && sessionEl)
-                ? sessionEl.options[sessionEl.selectedIndex].text
-                : '';
+                var sessionStartEl = document.getElementById('wp-' + wpCurrent + '-session-start');
+                var sessionEndEl = document.getElementById('wp-' + wpCurrent + '-session-end');
+                var sessionLine = '';
+                if (sessionStartEl && sessionEndEl && sessionStartEl.value && sessionEndEl.value) {
+                    sessionLine = sessionStartEl.value + ' to ' + sessionEndEl.value;
+                } else if (sessionStartEl && sessionStartEl.value) {
+                    sessionLine = sessionStartEl.value;
+                } else {
+                    // Fallback for old single date or select
+                    var sessionEl = document.getElementById('wp-' + wpCurrent + '-session');
+                    sessionLine = sessionEl ? (sessionEl.type === 'date' ? sessionEl.value : (sessionEl.options ? sessionEl.options[sessionEl.selectedIndex].text : '')) : '';
+                }
 
                 // Prepare data for Formspree
                 var formData = {

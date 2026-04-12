@@ -800,7 +800,8 @@ footer {
     width: 120px;
     flex-shrink: 0;
     }
-    .wp-row select {
+    .wp-row select,
+    .wp-row input[type="date"] {
     flex: 1;
     padding: 7px 10px;
     border: 1px solid #ddd;
@@ -811,10 +812,41 @@ footer {
     background: #fff;
     transition: border-color 0.2s;
     }
-    .wp-row select:focus {
+    .wp-row select:focus,
+    .wp-row input[type="date"]:focus {
     outline: none;
     border-color: #8A65C9;
     box-shadow: 0 0 0 3px rgba(138,101,201,0.1);
+    }
+
+    .wp-date-range {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    }
+    .wp-date-range input[type="date"] {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.2s;
+    }
+    .wp-date-range input[type="date"]:focus {
+    outline: none;
+    border-color: #8A65C9;
+    box-shadow: 0 0 0 3px rgba(138,101,201,0.1);
+    }
+    .wp-date-separator {
+    font-size: 0.82rem;
+    color: #666;
+    font-weight: 500;
     }
 
     /* ── Yoga pill ── */
