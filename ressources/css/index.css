@@ -777,7 +777,7 @@ nav ul li a:hover::after {
     display: block;
 }
 
-.brasil3 {
+.brasil3{
     object-position: bottom
 }
 
@@ -793,9 +793,9 @@ nav ul li a:hover::after {
     padding: 2rem;
     background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.25) 0%,
-        rgba(0,0,0,0.55) 60%,
-        rgba(0,0,0,0.72) 100%
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0.3) 60%,
+        rgba(0,0,0,0.5) 100%
     );
 }
 

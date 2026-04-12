@@ -45,212 +45,217 @@
             </div>
         </section>
 
-        <!-- Booking form section
-        <section class="booking-form">
+        <!-- ══ WINDPRANA BOOKING FORM ══ -->
+        <section class="booking-form" id="booking-section">
             <div class="container">
-                <h2>Reservation Form</h2>
-                <p>Fill in the form below to book your adventure. We'll contact you within 48 hours to confirm your reservation and provide payment details.</p>
-                
-                <form action="#" method="post" id="booking-form">
-        -->
-                    <!-- Personal Information
-                    <div class="form-section">
-                        <h3>Personal Information</h3>
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="country">Country *</label>
-                            <input type="text" id="country" name="country" required>
-                        </div>
+                <h2>Book Your Adventure</h2>
+                <p class="wp-intro">Fill in the form below — we'll confirm your spot within 48h and send payment details.</p>
+
+                <div class="wp-card">
+
+                <!-- Header -->
+                <div class="wp-card-header">
+                    <span>My booking</span>
+                    <small id="wp-hdr-dest">No destination selected</small>
+                </div>
+
+                <!-- Participants -->
+                <div class="wp-parts-row">
+                    <span class="wp-parts-label">Participants</span>
+                    <button class="wp-qty-btn" onclick="wpChPart(-1)">−</button>
+                    <span class="wp-qty-val" id="wp-part-val">1</span>
+                    <button class="wp-qty-btn" onclick="wpChPart(1)">+</button>
+                </div>
+
+                <!-- Destination selector -->
+                <div class="wp-dest-select">
+                    <div class="wp-dest-select-label">Choose a destination</div>
+                    <div class="wp-chips">
+                    <div class="wp-chip" id="wp-chip-maroc"   onclick="wpSelect('maroc')">Dakhla Morocco</div>
+                    <div class="wp-chip" id="wp-chip-brasil"  onclick="wpSelect('brasil')">Brasil</div>
+                    <div class="wp-chip" id="wp-chip-kenya"   onclick="wpSelect('kenya')">Kenya</div>
                     </div>
-                    -->
-                    <!-- Trip Details
-                    <div class="form-section">
-                        <h3>Trip Details</h3>
-                        
-                        <div class="form-group">
-                            <label for="trip-type">Select Adventure *</label>
-                            <select id="trip-type" name="trip-type" required>
-                                <option value="">-- Select a trip --</option>
-                                <option value="trip1">Trip Name 1</option>
-                                <option value="trip2">Trip Name 2</option>
-                                <option value="trip3">Trip Name 3</option>
-                                <option value="custom">Custom Adventure</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="date">Preferred Date *</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="duration">Duration (Days) *</label>
-                            <select id="duration" name="duration" required>
-                                <option value="3">3 days</option>
-                                <option value="5">5 days</option>
-                                <option value="7">7 days</option>
-                                <option value="10">10 days</option>
-                                <option value="14">14 days</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="participants">Number of Participants *</label>
-                            <select id="participants" name="participants" required>
-                                <option value="1">1 person</option>
-                                <option value="2">2 people</option>
-                                <option value="3">3 people</option>
-                                <option value="4">4 people</option>
-                                <option value="5">5 people</option>
-                                <option value="6+">6+ people (group)</option>
-                            </select>
-                        </div>
+                </div>
+
+                <!-- Empty state -->
+                <div class="wp-empty" id="wp-empty">Select a destination to see options.</div>
+
+                <!-- ── MAROC ── -->
+                <div class="wp-dest-body" id="wp-body-maroc">
+                    <div class="wp-dest-title">Dakhla Morocco</div>
+                    <div class="wp-dest-subtitle">14–21 Apr · 28 Apr-5 May 2026</div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-maroc-session">Session</label>
+                    <select id="wp-maroc-session" onchange="wpRecalc()">
+                        <option>14–21 Apr 2026</option>
+                        <option>28 Apr-5 May 2026</option>
+                    </select>
                     </div>
-                -->
-                    <!-- Experience Level
-                    <div class="form-section">
-                        <h3>Experience Level</h3>
-                        
-                        <div class="form-group">
-                            <label>Kite Experience *</label>
-                            <div class="radio-group">
-                                <input type="radio" id="kite-beginner" name="kite-level" value="beginner" required>
-                                <label for="kite-beginner">Beginner (0-1 year)</label>
-                                
-                                <input type="radio" id="kite-intermediate" name="kite-level" value="intermediate">
-                                <label for="kite-intermediate">Intermediate (1-3 years)</label>
-                                
-                                <input type="radio" id="kite-advanced" name="kite-level" value="advanced">
-                                <label for="kite-advanced">Advanced (3+ years)</label>
-                                
-                                <input type="radio" id="kite-none" name="kite-level" value="none">
-                                <label for="kite-none">No experience</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Yoga Experience *</label>
-                            <div class="radio-group">
-                                <input type="radio" id="yoga-beginner" name="yoga-level" value="beginner" required>
-                                <label for="yoga-beginner">Beginner</label>
-                                
-                                <input type="radio" id="yoga-intermediate" name="yoga-level" value="intermediate">
-                                <label for="yoga-intermediate">Intermediate</label>
-                                
-                                <input type="radio" id="yoga-advanced" name="yoga-level" value="advanced">
-                                <label for="yoga-advanced">Advanced</label>
-                                
-                                <input type="radio" id="yoga-none" name="yoga-level" value="none">
-                                <label for="yoga-none">No experience</label>
-                            </div>
-                        </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-maroc-coaching">Advanced Private Coaching</label>
+                    <select id="wp-maroc-coaching" onchange="wpRecalc()">
+                        <option value="171">2 h — €171 / person</option>
+                        <option value="324">4 h — €324 / person</option>
+                        <option value="459">6 h — €459 / person</option>
+                        <option value="576">8 h — €576 / person</option>
+                        <option value="675">10 h — €675 / person</option>
+                    </select>
                     </div>
-                -->
-                    <!-- Additional Details
-                    <div class="form-section">
-                        <h3>Additional Information</h3>
-                        
-                        <div class="form-group">
-                            <label for="equipment">Do you have your own kite equipment?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="equipment-yes" name="equipment" value="yes">
-                                <label for="equipment-yes">Yes</label>
-                                
-                                <input type="radio" id="equipment-no" name="equipment" value="no">
-                                <label for="equipment-no">No, I need to rent</label>
-                                
-                                <input type="radio" id="equipment-partial" name="equipment" value="partial">
-                                <label for="equipment-partial">Partial equipment</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="dietary">Dietary Restrictions</label>
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="vegetarian" name="dietary[]" value="vegetarian">
-                                <label for="vegetarian">Vegetarian</label>
-                                
-                                <input type="checkbox" id="vegan" name="dietary[]" value="vegan">
-                                <label for="vegan">Vegan</label>
-                                
-                                <input type="checkbox" id="gluten-free" name="dietary[]" value="gluten-free">
-                                <label for="gluten-free">Gluten-free</label>
-                                
-                                <input type="checkbox" id="dairy-free" name="dietary[]" value="dairy-free">
-                                <label for="dairy-free">Dairy-free</label>
-                                
-                                <input type="checkbox" id="other-dietary" name="dietary[]" value="other">
-                                <label for="other-dietary">Other</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="special-requests">Special Requests or Questions</label>
-                            <textarea id="special-requests" name="special-requests" rows="5"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="hear-about">How did you hear about us?</label>
-                            <select id="hear-about" name="hear-about">
-                                <option value="">-- Select an option --</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="youtube">YouTube</option>
-                                <option value="friend">Friend Recommendation</option>
-                                <option value="search">Search Engine</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-maroc-lodging">Accommodation with our partner</label>
+                    <select id="wp-maroc-lodging" onchange="wpRecalc()">
+                        <option value="0">Send me details of partners options</option>
+                        <option value="0">I take care of accommodation independently</option>
+                    </select>
                     </div>
-                -->
-                    
-                    <!-- Terms and Privacy Policy
-                    <div class="form-section">
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> *</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="privacy" name="privacy" required>
-                                <label for="privacy">I have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> *</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="newsletter" name="newsletter">
-                                <label for="newsletter">I would like to receive updates about future adventures</label>
-                            </div>
-                        </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-maroc-yoga">Yoga</label>
+                    <select id="wp-maroc-yoga" onchange="wpRecalc()">
+                        <option value="0">No yoga</option>
+                        <option value="25">1h €25 / person</option>
+                        <option value="45">2h €45 / person</option>
+                        <option value="60">3h €60 / person</option>
+                        <option value="75">4h €75 / person</option>
+                        <option value="90">5h 90€ / person</option>
+                        <option value="100">6h €100 / person</option>
+                    </select>
                     </div>
-                    
-                    <div class="form-actions">
-                        <p class="required-fields">* Required fields</p>
-                        <button type="submit" class="btn-primary">Submit Booking Request</button>
+                    <div class="wp-subtotal-row">
+                    <span>Subtotal / person</span>
+                    <strong id="wp-sub-maroc">—</strong>
                     </div>
-                </form>
+                </div>
+
+                <!-- ── BRASIL ── -->
+                <div class="wp-dest-body" id="wp-body-brasil">
+                    <div class="wp-dest-title">Brasil</div>
+                    <div class="wp-dest-subtitle">Macapá &amp; Nordeste · October 2026</div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-brasil-coaching">Coaching</label>
+                    <select id="wp-brasil-coaching" onchange="wpRecalc()">
+                        <option value="140">4 h — €140 / person</option>
+                        <option value="210">6 h — €210 / person</option>
+                        <option value="280">8 h — €280 / person</option>
+                        <option value="350">10 h — €350 / person</option>
+                        <option value="420">12 h — €420 / person</option>
+                        <option value="490">14 h — €490 / person</option>
+                        <option value="560">16 h — €560 / person</option>
+                    </select>
+                    </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-brasil-lodging">Accommodation</label>
+                    <select id="wp-brasil-lodging" onchange="wpRecalc()">
+                        <option value="520">Shared pousada — €520 / person</option>
+                        <option value="720">Double pousada — €720 / person</option>
+                        <option value="980">Single pousada — €980 / person</option>
+                    </select>
+                    </div>
+                    <div class="wp-included">
+                    <span class="wp-pill">Yoga included</span>
+                    <span class="wp-included-text">Morning sessions included</span>
+                    </div>
+                    <div class="wp-subtotal-row">
+                    <span>Subtotal / person</span>
+                    <strong id="wp-sub-brasil">—</strong>
+                    </div>
+                </div>
+
+                <!-- ── KENYA ── -->
+                <div class="wp-dest-body" id="wp-body-kenya">
+                    <div class="wp-dest-title">Kenya — Diani Beach</div>
+                    <div class="wp-dest-subtitle">January 2027</div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-kenya-coaching">Coaching</label>
+                    <select id="wp-kenya-coaching" onchange="wpRecalc()">
+                        <option value="140">4 h — €140 / person</option>
+                        <option value="210">6 h — €210 / person</option>
+                        <option value="280">8 h — €280 / person</option>
+                        <option value="350">10 h — €350 / person</option>
+                        <option value="420">12 h — €420 / person</option>
+                        <option value="490">14 h — €490 / person</option>
+                        <option value="560">16 h — €560 / person</option>
+                    </select>
+                    </div>
+                    <div class="wp-row">
+                    <label class="wp-row-label" for="wp-kenya-lodging">Accommodation</label>
+                    <select id="wp-kenya-lodging" onchange="wpRecalc()">
+                        <option value="690">Kashkazi — shared — €690 / person</option>
+                        <option value="890">Kashkazi — double — €890 / person</option>
+                        <option value="1190">Kashkazi — single — €1,190 / person</option>
+                    </select>
+                    </div>
+                    <div class="wp-included">
+                    <span class="wp-pill">Yoga included</span>
+                    <span class="wp-included-text">Morning sessions included</span>
+                    </div>
+                    <div class="wp-subtotal-row">
+                    <span>Subtotal / person</span>
+                    <strong id="wp-sub-kenya">—</strong>
+                    </div>
+                </div>
+
+                <!-- Contact fields -->
+                <div class="wp-contact" id="wp-contact" style="display:none;">
+                    <div class="wp-contact-title">Your details</div>
+                    <div class="wp-contact-grid">
+                    <div class="form-group">
+                        <label for="wp-fname">First name *</label>
+                        <input type="text" id="wp-fname" placeholder="Camille" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wp-lname">Last name *</label>
+                        <input type="text" id="wp-lname" placeholder="Martin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wp-email">Email *</label>
+                        <input type="email" id="wp-email" placeholder="camille@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wp-phone">WhatsApp / Phone</label>
+                        <input type="tel" id="wp-phone" placeholder="+33 6 00 00 00 00">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label for="wp-message">Message or questions</label>
+                    <textarea id="wp-message" rows="3" placeholder="Equipment questions, dietary needs, anything you'd like us to know…"></textarea>
+                    </div>
+                    <div id="wp-error-msg" class="wp-error" style="display:none;">
+                    Please fill in your first name, last name and email.
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="wp-footer">
+                    <div class="wp-f-row">
+                    <span>Participants</span><span id="wp-f-parts">1</span>
+                    </div>
+                    <div class="wp-f-row">
+                    <span>Destination</span><span id="wp-f-dest">—</span>
+                    </div>
+                    <div class="wp-f-total">
+                    <span>Estimated total</span>
+                    <span id="wp-f-total">€—</span>
+                    </div>
+                    <div class="wp-f-deposit">
+                    <span>30% deposit to secure your spot</span>
+                    <span id="wp-f-deposit">€—</span>
+                    </div>
+                    <button class="wp-cta" id="wp-cta" onclick="wpSubmit()">Send my request →</button>
+                </div>
+
+                </div><!-- /.wp-card -->
+
+                <!-- Success message -->
+                <div class="wp-success" id="wp-success" style="display:none;">
+                <div class="wp-success-icon">🪁</div>
+                <h3>Request sent!</h3>
+                <p>We'll get back to you within 48h to confirm your spot and share payment details.</p>
+                <p class="wp-success-contact">WhatsApp: <a href="https://wa.me/33769192769">+33 7 69 19 27 69</a></p>
+                </div>
+
             </div>
         </section>
-    -->
+        <!-- ══ END BOOKING FORM ══ -->
 
         <!-- Alternative booking methods -->
         <section class="booking-alt">
@@ -347,6 +352,135 @@
             </div>
         </footer>
 
-        <!-- JS scripts to be added later -->
+        <script>
+            /* ── WindPrana Booking Logic ── */
+            var wpParts   = 1;
+            var wpCurrent = null;
+            var wpNames   = { maroc: 'Dakhla Morocco', brasil: 'Brasil', kenya: 'Kenya' };
+
+            function wpChPart(d) {
+                wpParts = Math.max(1, Math.min(10, wpParts + d));
+                document.getElementById('wp-part-val').textContent = wpParts;
+                document.getElementById('wp-f-parts').textContent  = wpParts;
+                wpRecalc();
+            }
+
+            function wpSelect(id) {
+                wpCurrent = id;
+                ['maroc','brasil','kenya'].forEach(function(d) {
+                document.getElementById('wp-body-' + d).style.display = (d === id) ? 'block' : 'none';
+                var chip = document.getElementById('wp-chip-' + d);
+                chip.classList.toggle('wp-chip-active', d === id);
+                });
+                document.getElementById('wp-empty').style.display   = 'none';
+                document.getElementById('wp-contact').style.display = 'block';
+                document.getElementById('wp-hdr-dest').textContent  = wpNames[id];
+                document.getElementById('wp-f-dest').textContent    = wpNames[id];
+                wpRecalc();
+            }
+
+            function wpGetVal(id) {
+                var el = document.getElementById(id);
+                return el ? (parseInt(el.value) || 0) : 0;
+            }
+
+            function wpFmt(n) {
+                return '€' + n.toLocaleString('fr-FR');
+            }
+
+            function wpRecalc() {
+                if (!wpCurrent) return;
+                var coaching = wpGetVal('wp-' + wpCurrent + '-coaching');
+                var lodging  = wpGetVal('wp-' + wpCurrent + '-lodging');
+                var yoga     = wpGetVal('wp-' + wpCurrent + '-yoga');
+                var sub      = coaching + lodging + yoga;
+                var total    = sub * wpParts;
+                document.getElementById('wp-sub-' + wpCurrent).textContent = wpFmt(sub) + ' / person';
+                document.getElementById('wp-f-total').textContent   = wpFmt(total);
+                document.getElementById('wp-f-deposit').textContent = wpFmt(Math.round(total * 0.3));
+            }
+
+            function wpSubmit() {
+                if (!wpCurrent) { alert('Please select a destination first.'); return; }
+
+                var fname = document.getElementById('wp-fname').value.trim();
+                var lname = document.getElementById('wp-lname').value.trim();
+                var email = document.getElementById('wp-email').value.trim();
+
+                if (!fname || !lname || !email) {
+                document.getElementById('wp-error-msg').style.display = 'block';
+                document.getElementById('wp-fname').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+                }
+                document.getElementById('wp-error-msg').style.display = 'none';
+
+                var phone   = document.getElementById('wp-phone').value.trim();
+                var message = document.getElementById('wp-message').value.trim();
+                var parts   = document.getElementById('wp-part-val').textContent;
+                var total   = document.getElementById('wp-f-total').textContent;
+                var deposit = document.getElementById('wp-f-deposit').textContent;
+
+                var coachSel  = document.getElementById('wp-' + wpCurrent + '-coaching');
+                var lodgeSel  = document.getElementById('wp-' + wpCurrent + '-lodging');
+                var yogaSel   = document.getElementById('wp-' + wpCurrent + '-yoga');
+                var coachText = coachSel ? coachSel.options[coachSel.selectedIndex].text : '';
+                var lodgeText = lodgeSel ? lodgeSel.options[lodgeSel.selectedIndex].text : '';
+                var yogaText  = yogaSel ? yogaSel.options[yogaSel.selectedIndex].text : '';
+
+                var sessionEl   = document.getElementById('wp-maroc-session');
+                var sessionLine = (wpCurrent === 'maroc' && sessionEl)
+                ? sessionEl.options[sessionEl.selectedIndex].text
+                : '';
+
+                // Prepare data for Formspree
+                var formData = {
+                    destination: wpNames[wpCurrent],
+                    session: sessionLine,
+                    coaching: coachText,
+                    accommodation: lodgeText,
+                    yoga: yogaText,
+                    participants: parts,
+                    total: total,
+                    deposit: deposit,
+                    name: fname + ' ' + lname,
+                    email: email,
+                    phone: phone || '',
+                    message: message || ''
+                };
+
+                // Disable button and show loading
+                var submitBtn = document.getElementById('wp-cta');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                // Send to Formspree
+                fetch('https://formspree.io/f/mvzdpokw', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        document.getElementById('booking-section').style.display = 'none';
+                        document.getElementById('wp-success').style.display = 'block';
+                    } else {
+                        document.getElementById('wp-error-msg').textContent = 'Error sending request. Please try again or contact us directly.';
+                        document.getElementById('wp-error-msg').style.display = 'block';
+                        document.getElementById('wp-fname').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                })
+                .catch(function(error) {
+                    document.getElementById('wp-error-msg').textContent = 'Error sending request. Please try again or contact us directly.';
+                    document.getElementById('wp-error-msg').style.display = 'block';
+                    document.getElementById('wp-fname').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send my request →';
+                });
+            }
+        </script>
     </body>
 </html>
