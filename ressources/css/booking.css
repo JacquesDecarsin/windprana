@@ -946,6 +946,5 @@ footer {
     .wp-row-label { width: auto; }
     .wp-row select { width: 100%; }
     .wp-chips { flex-direction: column; }
-    .wp-chip { text-align: center; }
-    }
+.wp-chip { text-align: center; }
 }
